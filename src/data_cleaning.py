@@ -31,3 +31,26 @@ for col in numeric_cols:
 
 print("\nDtypes after conversion:")
 print(df.dtypes)
+
+from pathlib import Path
+
+# Make sure tables/ exists
+Path("tables").mkdir(parents=True, exist_ok=True)
+
+# 1.2 Data dictionary info
+dtypes = df.dtypes.astype(str)
+missing_counts = df.isna().sum()
+
+data_dict_df = (
+    pd.DataFrame({
+        "column": df.columns,
+        "dtype": [dtypes[c] for c in df.columns],
+        "n_missing": [int(missing_counts[c]) for c in df.columns],
+        "example_value": [df[c].dropna().iloc[0] if df[c].dropna().shape[0] > 0 else None for c in df.columns],
+    })
+)
+
+print("\n1.2 Data dictionary (column, dtype, missing):")
+print(data_dict_df.to_string(index=False))
+
+data_dict_df.to_csv("tables/data_dictionary.csv", index=False)
