@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Seminars 3 & 4 — Hedonometer (Project Folder)
 
 This folder provides an **example project structure** (and an instructor/demo script) for the Seminars 3 & 4 group project using the **labMT 1.0** dataset (Data Set S1 from the Hedonometer paper).
@@ -48,7 +48,7 @@ python3 src/run_analysis.py
 After running, look in:
 - `figures/` — PNG plots
 - `tables/` — CSV summary tables
-=======
+
 # Hedonometer Project – Group 14
 
 ## 1. Overview
@@ -166,4 +166,4 @@ We selected 20 words across four categories:
 - Person 5 – Critical reflection
 
 ### Citation
->>>>>>> 7444a025159fb95e427af3786e5af780b34c48a1
+
