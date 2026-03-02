@@ -68,7 +68,29 @@ compare corpus rankings, and reflect critically on how the dataset was generated
 
 ### Data Dictionary
 
-- *(add or adjust column names based on your actual dataset)*
+- **word** (text) — The English word being evaluated in the labMT dataset.  
+  *Missingness:* No missing values.
+
+- **happiness_rank** (integer) — Rank order of the word based on its average happiness score (1 = highest happiness).  
+  *Missingness:* No missing values.
+
+- **happiness_average** (float) — Mean happiness rating assigned by Mechanical Turk annotators on a 1–9 scale.  
+  *Missingness:* No missing values.
+
+- **happiness_standard_deviation** (float) — Standard deviation of happiness ratings across annotators, indicating the level of agreement or disagreement.  
+  *Missingness:* No missing values.
+
+- **twitter_rank** (float) — Frequency rank of the word in the Twitter corpus (restricted to the top 5000 most frequent words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in Twitter’s top-5000 list.
+
+- **google_rank** (float) — Frequency rank in the Google Books corpus (top 5000 words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in Google Books’ top-5000 list.
+
+- **nyt_rank** (float) — Frequency rank in the New York Times corpus (top 5000 words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in the NYT top-5000 list.
+
+- **lyrics_rank** (float) — Frequency rank in the song lyrics corpus (top 5000 words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in the lyrics top-5000 list.
 
 ---
 
