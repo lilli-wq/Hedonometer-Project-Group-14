@@ -73,6 +73,12 @@ compare corpus rankings, and reflect critically on how the dataset was generated
 ---
 
 ## 3. Methods
+-Loading and Cleaning
+We loaded the labMT 1.0 dataset into a pandas DataFrame using pd.read_csv with tab (\t) as the delimiter. Because the file begins with metadata lines, we skipped the first three lines (skiprows=3). We also treated "--" as missing values (NaN) and converted numeric columns to appropriate numeric types to enable statistical analysis.
+
+The dataset contains 10,222 rows and 8 columns.
+
+A missing rank ("--") indicates that the word does not appear in the top-5000 list of that particular corpus, rather than representing corrupted or unknown data.
 
 We used Python (pandas and matplotlib) to:
 
