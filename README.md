@@ -68,11 +68,50 @@ compare corpus rankings, and reflect critically on how the dataset was generated
 
 ### Data Dictionary
 
-- *(add or adjust column names based on your actual dataset)*
+- **word** (text) — The English word being evaluated in the labMT dataset.  
+  *Missingness:* No missing values.
+
+- **happiness_rank** (integer) — Rank order of the word based on its average happiness score (1 = highest happiness).  
+  *Missingness:* No missing values.
+
+- **happiness_average** (float) — Mean happiness rating assigned by Mechanical Turk annotators on a 1–9 scale.  
+  *Missingness:* No missing values.
+
+- **happiness_standard_deviation** (float) — Standard deviation of happiness ratings across annotators, indicating the level of agreement or disagreement.  
+  *Missingness:* No missing values.
+
+- **twitter_rank** (float) — Frequency rank of the word in the Twitter corpus (restricted to the top 5000 most frequent words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in Twitter’s top-5000 list.
+
+- **google_rank** (float) — Frequency rank in the Google Books corpus (top 5000 words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in Google Books’ top-5000 list.
+
+- **nyt_rank** (float) — Frequency rank in the New York Times corpus (top 5000 words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in the NYT top-5000 list.
+
+- **lyrics_rank** (float) — Frequency rank in the song lyrics corpus (top 5000 words).  
+  *Missingness:* 5,222 values are missing. A `NaN` value indicates the word does not appear in the lyrics top-5000 list.
+
+### Sanity Checks
+**1. Checking for duplicate words:**  
+Each row is supposed to represent a distinct word, so duplicates would indicate
+a problem in the source file or in the read‑in options. We found no repetitions.
+
+**2. Inspecting a random sample:**  
+Picking 15 random rows lets you quickly spot formatting errors, data-type problems, missing values, and encoding issues without inspecting the entire dataset.
+
+**3. Extreme value check: Ten most positive / ten most negative words:**  
+Sorting by happiness score and examining the top and bottom 10 words verifies that numeric values are in the expected range and that the scores make intuitive sense (positive words score high, negative words score low). The data makes sense - most positive words such as laughter, happiness and love and most negative words such as died, kill or killed align with the expected data.
 
 ---
 
 ## 3. Methods
+-Loading and Cleaning
+We loaded the labMT 1.0 dataset into a pandas DataFrame using pd.read_csv with tab (\t) as the delimiter. Because the file begins with metadata lines, we skipped the first three lines (skiprows=3). We also treated "--" as missing values (NaN) and converted numeric columns to appropriate numeric types to enable statistical analysis.
+
+The dataset contains 10,222 rows and 8 columns.
+
+A missing rank ("--") indicates that the word does not appear in the top-5000 list of that particular corpus, rather than representing corrupted or unknown data.
 
 We used Python (pandas and matplotlib) to:
 
