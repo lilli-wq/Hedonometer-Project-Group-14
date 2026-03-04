@@ -1,4 +1,12 @@
 # ---- Section 2: Quantitative exploration ----
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("data/raw/Data_Set_S1.txt", sep="\t")
+
+SCORE = "happiness_average"
+STD = "happiness_standard_deviation"
+
 def print_section(title):
     print("\n" + "=" * 60)
     print(title)
@@ -110,5 +118,6 @@ save_scatter(
     "twitter_rank (1 = most frequent)",
     "nyt_rank (1 = most frequent)",
 )
+
 
 
