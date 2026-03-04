@@ -155,11 +155,31 @@ The code calculates summary statistics, generates visualizations, and outputs ta
 ---
 
 ### 4.3 Corpus Comparison
+## Coverage across corpora
 
-*(Insert bar chart or overlap table here later)*
+![Corpus coverage](figures/corpus_rank_coverage_bar.png)
 
-**Interpretation:**  
-(Write explanation here.)
+This chart shows how many labMT words appear among the **top 5000 most frequent words** in each corpus: Twitter, Google Books, New York Times, and song lyrics.
+
+The results indicate that nearly all labMT words appear in each corpus, suggesting that the lexicon mainly contains widely used English vocabulary.
+
+## Rank comparison between corpora
+
+![Twitter vs NYT](figures/twitter_rank_vs_nyt_rank_scatter.png)
+
+The scatterplot compares the frequency ranks of words in **Twitter** and **NYT**. Words near the lower-left corner are frequent in both corpora, while words that deviate from the diagonal show differences in usage between informal social media language and formal journalistic writing.
+
+For example, slang expressions may appear frequently on Twitter but rarely in newspapers.
+
+## Vocabulary overlap across corpora
+
+To further examine corpus differences, we calculated how many words appear in different combinations of the four corpora.
+
+[View overlap table](tables/corpus_overlap_patterns.csv)
+
+The results show that **1816 words appear in all four corpora**, forming a shared core vocabulary across different types of text. At the same time, many words appear only in specific corpora. For example, **1486 words appear only in song lyrics**, while **1115 appear only in Google Books**, **1043 only in NYT**, and **952 only in Twitter**.
+
+These patterns highlight how language varies across communication contexts. Social media platforms such as Twitter tend to include informal expressions and slang, while news articles and books use more formal vocabulary. Lyrics also display distinctive emotional and expressive language.
 
 ---
 
