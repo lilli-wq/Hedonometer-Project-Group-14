@@ -291,17 +291,53 @@ Different communities may use and interpret these words differently depending on
 
 ### 6.1 Data Generation Pipeline
 
-(Describe the steps used to construct the dataset.)
+Researchers compiled a list of frequently used words from several large text corpora, such as Twitter, Google Books, New York Times articles, and music lyrics.From each source they selected the 5,000 most frequent words, then merged these lists and finally created a combined vocabulary of 10,222 unique words. Each word in this list was treated as an individual item and presented to human participants for evaluation.  
+—> The goal was to determine how emotionally positive or negative each word felt, independent of any sentence context.
+
+Participants on Amazon Mechanical Turk then rated each word on a 1–9 happiness scale: 
+1 = very unhappy
+5 = neutral
+9 = very happy
+
+After collecting the ratings, the researchers calculated an average happiness score for each word and the standard deviation, showing how much people disagreed about the rating. These values formed the core emotional measurements in the dataset.
+The dataset also records how common each word is across different text sources, with each word including  frequency ranks showing how often it appears
+
+The final dataset is a table where each row represents a word, and the columns contain:
+* the word itself
+* its happiness score
+* the disagreement among raters
+* frequency rankings across multiple corpora
+
+Finally, this dataset can then be used to measure the emotional tone of large texts by combining the happiness scores with word frequencies.
 
 ### 6.2 Consequences and Limitations
 
-(Discuss at least five design choices and their implications.)
+#### 1. Emotion is simplified into a single numerical value  
+Each word is assigned one number between 1 and 9 representing its happiness score - this risks reducing complex emotional meaning to a single dimension (happy vs. unhappy). Many words carry ambiguous or layered emotional meanings. Literature and cultural texts often rely on irony, tension, or mixed feelings that can not be captured by a single numerical value.
+
+#### 2. The hedonometer method treats text as a “bag of words" , focusing only on word frequency rather than sentence structure.  
+ That way, the method cannot detect negation, sarcasm, or narrative tone.
+e.g. The sentence “I am not happy” still contains the positive word “happy.”—> Meaning in language often emerges through syntax, storytelling, and rhetorical context, which are ignored by this method.
+
+#### 3. Cultural bias  
+The happiness scores were collected from people on Amazon Mechanical Turk, meaning that these ratings reflect the cultural background and experiences of these specific participants involved. Yet, emotional meanings of words may vary across cultures, regions, and communities.This means the dataset represents a particular cultural interpretation of emotion in language, rather than a universal emotional meaning.
+
+#### 4. Only frequently used words were included  
+The dataset was created by selecting the most common words from several large text sources such as Twitter, Google Books, the New York Times, and song lyrics. But that also means that rare words, specialized terminology, or emerging slang may not be included in the dataset. This means the analysis could miss some emotional signals present in newer or less common vocabulary.
+
+#### 5. Selective choice of data sources  
+The dataset was built using words from specific sources: Twitter, Google Books, the New York Times, and song lyrics. By focusing only on these sources, the dataset reflects the language styles and cultural contexts of these particular platforms only. Other forms of communication, such as spoken language, online forums, or regional dialects, are not represented. This means the dataset represents a limited selection of language environments chosen by the researchers, rather than language as a whole.
+
+
+
 
 ### 6.3 Instrument Note
 
 (200–400 word reflection.)
 
 ---
+
+
 
 ## 7. How to Run This Project
 
