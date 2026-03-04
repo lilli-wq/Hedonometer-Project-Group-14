@@ -106,7 +106,9 @@ Sorting by happiness score and examining the top and bottom 10 words verifies th
 ---
 
 ## 3. Methods
--Loading and Cleaning
+
+-Loading and Cleaning:
+
 We loaded the labMT 1.0 dataset into a pandas DataFrame using pd.read_csv with tab (\t) as the delimiter. Because the file begins with metadata lines, we skipped the first three lines (skiprows=3). We also treated "--" as missing values (NaN) and converted numeric columns to appropriate numeric types to enable statistical analysis.
 
 The dataset contains 10,222 rows and 8 columns.
