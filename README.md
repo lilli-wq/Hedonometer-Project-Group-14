@@ -183,16 +183,108 @@ These patterns highlight how language varies across communication contexts. Soci
 
 We selected 20 words across four categories:
 
-- 5 highly positive
-- 5 highly negative
-- 5 highly contested
-- 5 culturally loaded or surprising
-
-(Insert table here later.)
+- 5 highly positive: laughter, happiness, love, happy, laughed
+- 5 highly negative: terrorist, suicide, rape, terrorism, murder
+- 5 highly contested: fucking, fuckin, fucked, pussy, whiskey
+- 5 weired or culturally loaded: churches, capitalism, mortality, porn, cigarette
 
 **Interpretive Discussion:**  
-(Write analysis here.)
 
+-What meanings/contexts the words can have
+
+1) highly positive
+The contexts for these words are generally stable, but subtle differences still exist:
+
+*laughter/laughtered:
+
+Common contexts: happiness, social interaction, humor, relaxation. Contrasting contexts may include: mockery, sarcasm, cynical laughter (e.g., laughed at someone), where the emotion may not be purely positive.
+
+*happiness/happy:
+
+Common contexts: subjective emotional state, blessings, life satisfaction (e.g., happy for you, happy life). It can also be a "performative" expression: a positive display on social media (e.g., look happy online), which doesn't necessarily represent genuine feelings.
+
+*love:
+
+Common contexts: romantic love, familial/friendship, liking/loving (e.g., love you/love this song). It can also be an exaggerated colloquial/internet slang term: I love that! (strong liking but not necessarily deep emotion). It can also appear in complex contexts: love-hate relationship.
+
+2) highly negative
+
+These words often carry strong moral and emotional weight in their contexts, thus more likely to receive consistently negative ratings:
+
+*terrorist / terrorism:
+
+Common contexts: news, politics, war, public safety (media reporting).
+
+May also appear in controversial contexts: labeling, political language (whoever is called a "terrorist" often has a stance).
+
+*suicide:
+
+Common contexts: mental health, tragedy, crisis (mental health discussions, prevention).
+
+Sometimes used lightly in online or subcultures (figurative expressions), but generally still strongly negative.
+
+*rape:
+
+Common contexts: crime, trauma, law and social movements (legal context, survivor narratives).
+
+May also appear in metaphors or vulgar jokes (very sensitive, offensive), affecting reactions from different groups.
+
+*murder:
+
+Common contexts: crime news, justice, violence narratives (crime reporting). There are also slight "exaggerated uses": This workload is murdering me (figurative exaggeration), but the word itself is still strongly negative.
+
+3) highly contested
+
+This group best exemplifies the principle of "context determines emotion":
+
+*fucking / fuckin / fucked: fucking / fucking / fucking done for:
+
+Context A: attack, anger, insult (strongly negative).
+
+Context B: emphasis/admiration/filler phrase (That's fucking amazing) may actually be positive or neutral.
+
+"Fucked" is also often used to express "terrible/done for": I'm fucked (negative), but it can also be used jokingly among friends.
+
+*pussy: 
+
+Contextual differences are greater:
+Children's terminology (cat)
+
+Sexual connotations (neutral/intimate/adult video context)
+
+Insulting usage (gender-shaming, negative and offensive)
+
+Different groups have very different judgments about the degree of offense.
+
+*whiskey: Whiskey
+
+Context A: Celebration, social interaction, drinking culture (positive/neutral).
+
+Context B: Addiction, health risks, the pain of alcoholism (negative).
+
+Therefore, some people find it "enjoyable," while others associate it with "harm."
+
+4) weird / culturally Loaded: 
+
+The context of this group is often strongly correlated with identity, values, and historical background:
+
+*churches: religious beliefs/community belonging vs. experiences of oppression/criticism of religious institutions (significant differences across backgrounds).
+
+*capitalism: for some, it's opportunity and a free market; for others, it's exploitation and inequality (strong influence of political stance).
+
+*mortality: philosophical, medical, and death-related topics; relatively neutral in academic contexts, but potentially heavy in personal experiences.
+
+*porn: sexual openness/entertainment industry vs. moral controversies/exploitation discussions/religious taboos (vast cultural differences).
+
+*cigarette: nostalgia, film/social symbol vs. health risks, addiction, public smoking bans (significant changes over time).
+
+-Why an happiness score might be high/low
+
+The happiness scores of words often reflect the kinds of experiences and associations people connect with them. Words such as laughter, happiness, and love tend to receive high scores because they are closely associated with positive emotions, social bonding, and enjoyable experiences. In contrast, words such as terrorist, suicide, and murder refer to violence, tragedy, or moral harm, which typically evoke strong negative emotional responses and therefore receive low scores. Some words produce more varied reactions depending on context. Profanity such as fucking or fucked can function as insults in some situations but as emphasis or excitement in others, which affects how people perceive their emotional tone. Similarly, culturally loaded words like capitalism, churches, or cigarette may evoke different feelings depending on a person’s beliefs, experiences, or cultural background. As a result, happiness scores capture an overall average of these diverse interpretations.
+
+-What kinds of voices or communities might use it differently
+
+Different communities may use and interpret these words differently depending on their cultural background, social norms, and experiences. For example, profanity such as fucking or fuckin is often used casually in online communities or among younger speakers, where it may function as humor or emphasis rather than as an insult. In contrast, older generations or more formal social contexts may view such language as inappropriate or offensive. Similarly, words like capitalism or churches can carry very different meanings depending on political or religious communities: some may associate them with freedom, faith, and community, while others may connect them with inequality or institutional power. Even everyday words like cigarette or whiskey may evoke nostalgia and social rituals for some groups, but concerns about addiction and health risks for others. These differences show that emotional interpretations of words are shaped by the communities and contexts in which they are used.
 ---
 
 ## 6. Critical Reflection
