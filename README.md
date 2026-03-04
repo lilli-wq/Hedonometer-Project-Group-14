@@ -120,6 +120,14 @@ We used Python (pandas and matplotlib) to:
 
 All code is available in the `src/` folder.
 
+We conducted three main quantitative analyses:
+
+1. Distribution analysis of happiness scores
+2. Identification of contested words based on rating disagreement
+3. Comparison of word frequency across four corpora (Twitter, Google Books, NYT, Lyrics)
+
+The code calculates summary statistics, generates visualizations, and outputs tables for further interpretation.
+
 ---
 
 ## 4. Results
