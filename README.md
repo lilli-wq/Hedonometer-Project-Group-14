@@ -186,13 +186,14 @@ We selected 20 words across four categories:
 - 5 highly positive: laughter, happiness, love, happy, laughed
 - 5 highly negative: terrorist, suicide, rape, terrorism, murder
 - 5 highly contested: fucking, fuckin, fucked, pussy, whiskey
-- 5 weired or culturally loaded: churches, capitalism, mortality, porn, cigarette
+- 5 weired or culturally loaded: churches, capitalism, mortality, porn, cigarette  
+<br>
 
 **Interpretive Discussion:**  
 
--What meanings/contexts the words can have
+#### What meanings/contexts these words can have:
 
-1) highly positive
+#### 1) Highly positive
 The contexts for these words are generally stable, but subtle differences still exist:
 
 *laughter/laughtered:
@@ -207,7 +208,7 @@ Common contexts: subjective emotional state, blessings, life satisfaction (e.g.,
 
 Common contexts: romantic love, familial/friendship, liking/loving (e.g., love you/love this song). It can also be an exaggerated colloquial/internet slang term: I love that! (strong liking but not necessarily deep emotion). It can also appear in complex contexts: love-hate relationship.
 
-2) highly negative
+#### 2) Highly negative
 
 These words often carry strong moral and emotional weight in their contexts, thus more likely to receive consistently negative ratings:
 
@@ -233,7 +234,7 @@ May also appear in metaphors or vulgar jokes (very sensitive, offensive), affect
 
 Common contexts: crime news, justice, violence narratives (crime reporting). There are also slight "exaggerated uses": This workload is murdering me (figurative exaggeration), but the word itself is still strongly negative.
 
-3) highly contested
+#### 3) Highly contested
 
 This group best exemplifies the principle of "context determines emotion":
 
@@ -264,7 +265,7 @@ Context B: Addiction, health risks, the pain of alcoholism (negative).
 
 Therefore, some people find it "enjoyable," while others associate it with "harm."
 
-4) weird / culturally Loaded: 
+#### 4) Weird / culturally loaded: 
 
 The context of this group is often strongly correlated with identity, values, and historical background:
 
@@ -278,13 +279,13 @@ The context of this group is often strongly correlated with identity, values, an
 
 *cigarette: nostalgia, film/social symbol vs. health risks, addiction, public smoking bans (significant changes over time).
 
--Why an happiness score might be high/low
-
+#### Why an happiness score might be high/low  
 The happiness scores of words often reflect the kinds of experiences and associations people connect with them. Words such as laughter, happiness, and love tend to receive high scores because they are closely associated with positive emotions, social bonding, and enjoyable experiences. In contrast, words such as terrorist, suicide, and murder refer to violence, tragedy, or moral harm, which typically evoke strong negative emotional responses and therefore receive low scores. Some words produce more varied reactions depending on context. Profanity such as fucking or fucked can function as insults in some situations but as emphasis or excitement in others, which affects how people perceive their emotional tone. Similarly, culturally loaded words like capitalism, churches, or cigarette may evoke different feelings depending on a person’s beliefs, experiences, or cultural background. As a result, happiness scores capture an overall average of these diverse interpretations.
 
--What kinds of voices or communities might use it differently
-
+#### What kinds of voices or communities might use it differently:  
 Different communities may use and interpret these words differently depending on their cultural background, social norms, and experiences. For example, profanity such as fucking or fuckin is often used casually in online communities or among younger speakers, where it may function as humor or emphasis rather than as an insult. In contrast, older generations or more formal social contexts may view such language as inappropriate or offensive. Similarly, words like capitalism or churches can carry very different meanings depending on political or religious communities: some may associate them with freedom, faith, and community, while others may connect them with inequality or institutional power. Even everyday words like cigarette or whiskey may evoke nostalgia and social rituals for some groups, but concerns about addiction and health risks for others. These differences show that emotional interpretations of words are shaped by the communities and contexts in which they are used.
+
+
 ---
 
 ## 6. Critical Reflection
