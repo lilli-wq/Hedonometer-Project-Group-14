@@ -167,7 +167,7 @@ The results indicate that nearly all labMT words appear in each corpus, suggesti
 
 ![Twitter vs NYT](figures/twitter_rank_vs_nyt_rank_scatter.png)
 
-The scatterplot compares the frequency ranks of words in **Twitter** and **NYT**. Words near the lower-left corner are frequent in both corpora, while words that deviate from the diagonal show differences in usage between informal social media language and formal journalistic writing.
+The scatterplot compares the frequency ranks of words in **Twitter** and **NYT**. Words near the lower-left corner are frequent in both corpora, while words that far away from the diagonal show differences in usage between informal social media language and formal journalistic writing.
 
 For example, slang expressions may appear frequently on Twitter but rarely in newspapers.
 
