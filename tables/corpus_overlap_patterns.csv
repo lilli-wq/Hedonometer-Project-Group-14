@@ -1,0 +1,17 @@
+corpora_present,n_words
+twitter+google+nyt+lyrics,1816
+lyrics,1486
+google,1115
+nyt,1043
+twitter,952
+twitter+lyrics,871
+google+nyt,864
+twitter+google+nyt,584
+none,327
+twitter+nyt,268
+twitter+google+lyrics,227
+twitter+nyt+lyrics,213
+google+lyrics,175
+google+nyt+lyrics,150
+twitter+google,69
+nyt+lyrics,62
