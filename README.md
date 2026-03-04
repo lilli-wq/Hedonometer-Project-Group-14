@@ -134,9 +134,7 @@ The code calculates summary statistics, generates visualizations, and outputs ta
 
 ### 4.1 Distribution of Happiness Scores
 
-*(Insert histogram here later)*
-
-![Histogram of Happiness Scores](figures/histogram.png)
+![Histogram of Happiness Scores](figures/happiness_average_hist.png)
 
 **Interpretation:**  
 (Write explanation here.)
@@ -145,12 +143,9 @@ The code calculates summary statistics, generates visualizations, and outputs ta
 
 ### 4.2 Disagreement and Contested Words
 
-*(Insert scatterplot here later)*
-
-![Happiness vs Standard Deviation](figures/scatter.png)
+![Happiness vs Standard Deviation](figures/happiness_vs_std_scatter.png)
 
 **Interpretation:**  
-(Write explanation here.)
 
 ---
 
