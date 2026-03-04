@@ -137,7 +137,7 @@ The code calculates summary statistics, generates visualizations, and outputs ta
 ![Histogram of Happiness Scores](figures/happiness_average_hist.png)
 
 **Interpretation:**  
-(Write explanation here.)
+The distribution of happiness scores follows a normal trend centered between 5.0 and 6.0, which demonstrates most words from corpus reflects netural and positive. The skew to the right reflects neutral and positive words outnumber negative ones, showing the nature of human communication is more focus on positive parts. The overall is generated as fan-shaped,illustrating that the disagreement increases as words become emotionally extreme.
 
 ---
 
@@ -146,6 +146,7 @@ The code calculates summary statistics, generates visualizations, and outputs ta
 ![Happiness vs Standard Deviation](figures/happiness_vs_std_scatter.png)
 
 **Interpretation:**  
+The word“fucking”often acts as an intensifier to convey strong emotion rather than direct malice. But in formal occiasion, it is viewed as  vulgar and impolite. Its SD of 2.92 is the highest in the set, indicating that participants could not reach a consensus on this word. Similarly, the word“fuckin”is also used in casual talk for emotional expression and bring people closer together, yet it is considered as a stereotype of low education levels as well. And the high SD of 2.74 also reflects people holding different opinions. Compared to the others, “fucked” is more indicative of self-deprecation or depression and its low mean of 3.56 confirms a general consensus that is negative and the high SD of 2.71 still reveals a lack of agreement on reasonable use. While some people apply it to express terriable circumstance, those who value etiquette still perceive it as a sign of rudeness. And the “pussy” has two different uses,the mean of 4.8 is near to neutral while the high SD of 2.66 captures its dispute. On one hand, it can express affection for cats as it can also symbolize weakness or even extreme misogyny. The last word “whiskey”has the highest mean of 5.72 showing the general opinion of likes but the SD of 2.64 reflects that it depends on peronal history with alcohol. For middle class or socialite, it represents as leisure and relaxation. Conversely, for those who encountered with alcoholism or environment of loss of control, the word is a signal for danger.
 
 ---
 
