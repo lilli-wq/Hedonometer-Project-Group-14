@@ -1,4 +1,8 @@
 # ---- Section 2: Quantitative exploration ----
+def print_section(title):
+    print("\n" + "=" * 60)
+    print(title)
+    print("=" * 60)
 SCORE = "happiness_average"
 STD = "happiness_standard_deviation"
 RANK_COLS = ["twitter_rank", "google_rank", "nyt_rank", "lyrics_rank"]
@@ -106,4 +110,5 @@ save_scatter(
     "twitter_rank (1 = most frequent)",
     "nyt_rank (1 = most frequent)",
 )
+
 
