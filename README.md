@@ -1,54 +1,3 @@
-
-# Seminars 3 & 4 — Hedonometer (Project Folder)
-
-This folder provides an **example project structure** (and an instructor/demo script) for the Seminars 3 & 4 group project using the **labMT 1.0** dataset (Data Set S1 from the Hedonometer paper).
-
-It includes:
-- the labMT 1.0 dataset file (`data/raw/Data_Set_S1.txt`)
-- a runnable demo analysis script (`src/hedonometer_labmt_demo.py`) that produces a *typical* set of outputs aligned to the assignment
-- course documents in `docs/` (original paper + paper companion + assignment + project quickstart), provided as **.pdf**
-
-## Folder layout (course convention)
-
-- `src/` — Python scripts you run
-- `data/raw/` — input data (treat as read-only)
-- `figures/` — PNG plots (embed these in your GitHub README)
-- `tables/` — CSV tables/summaries (optional to embed, but useful for analysis)
-- `docs/` — assignment + paper companion + quickstart handout
-
-## Setup + run (from the project root)
-
-### 1) Create a virtual environment
-
-**macOS / Linux**
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install --upgrade pip
-```
-
-**Windows (PowerShell)**
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-py -m pip install --upgrade pip
-```
-
-### 2) Install dependencies
-```bash
-python3 -m pip install -r requirements.txt
-```
-
-### 3) Run the demo analysis
-```bash
-python3 src/run_analysis.py
-```
-
-### What gets generated?
-After running, look in:
-- `figures/` — PNG plots
-- `tables/` — CSV summary tables
-
 # Hedonometer Project – Group 14
 
 ## 1. Overview
@@ -64,6 +13,11 @@ compare corpus rankings, and reflect critically on how the dataset was generated
 
 ### Source
 
+This project uses the **labMT 1.0 dataset** (“Language Assessment by Mechanical Turk”), which was developed to measure the emotional valence of words and to build a large-scale “hedonometer” for analyzing happiness in texts such as Twitter.
+
+The dataset was introduced in:
+
+Dodds et al. (2011), *Temporal patterns of happiness and information in a global social network: Hedonometrics and Twitter*.
 
 
 ### Data Dictionary
@@ -343,21 +297,41 @@ The dataset was built using words from specific sources: Twitter, Google Books, 
 ## 7. How to Run This Project
 
 1. Clone the repository:
+   git clone https://github.com/lilli-wq/Hedonometer-Project-Group-14
 
-2. Install required packages:
+2. Create a virtual environemnt
+
+3. Install required packages and dependencies:
+   pip install -r requirements.txt
 
 3. Run the main scripts:
+   python src/task_1.py (Load, clean, and describe the dataset)
+   python src/task_2.py (Quantitative exploration: distributions and relationships)
+   python src/task_3.py
+   (Qualitative exploration: close reading the lexicon as a cultural artifact)
+   python src/task_4.py
+   (Critical reflection: how was this dataset generated, and why does it matter?)
 
+4. Output files:
+   figures/ — plots used in the README.md
+   tables/ — generated tables and intermediate outputs
 
 ---
 
 ## 8. Credits
 
-- Person 1 – Workflow lead & data cleaning
-- Person 2 – Quantitative analysis ()
-- Person 3 – Quantitative analysis ()
-- Person 4 – Qualitative exhibit
-- Person 5 – Critical reflection
+- Workflow lead & data cleaning:
+  1.1 & 1.2 Yiting Jiao
+
+- Quantitative analysis:
+
+- Qualitative exhibit: Yiting Jiao
+
+- Critical reflection:
 
 ### Citation
 
+Dataset:
+Dodds, P. S., Harris, K. D., Kloumann, I. M., Bliss, C. A., & Danforth, C. M. (2011).  
+*Temporal patterns of happiness and information in a global social network: Hedonometrics and Twitter.*  
+PLOS ONE, 6(12), e26752. https://doi.org/10.1371/journal.pone.0026752
