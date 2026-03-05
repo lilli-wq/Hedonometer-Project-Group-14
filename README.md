@@ -285,7 +285,6 @@ The dataset was built using words from specific sources: Twitter, Google Books, 
 
 
 
-
 ### 6.3 Instrument Note
 
 (200–400 word reflection.)
@@ -322,12 +321,15 @@ The dataset was built using words from specific sources: Twitter, Google Books, 
 
 - Workflow lead & data cleaning:
   1.1 & 1.2 Yiting Jiao
+  1.3 Lilli 
 
-- Quantitative analysis:
+- Quantitative analysis: Tia & Floria
 
 - Qualitative exhibit: Yiting Jiao
 
-- Critical reflection:
+- Critical reflection: 
+6.1 & 6.2 Lilli 
+
 
 ### Citation
 
