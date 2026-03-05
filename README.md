@@ -287,7 +287,15 @@ The dataset was built using words from specific sources: Twitter, Google Books, 
 
 ### 6.3 Instrument Note
 
-(200–400 word reflection.)
+If the labMT 1.0 dataset is used as an instrument or a measurement tool, it would be most applicable for evaluating large-scale emotional patterns of text rather than precise word interpretations. Given that the dataset includes thousands of frequently used words and their average emotional scores, it can provide a broad indicator of the broad positivity or negativity of large text corpora. For example, it might be useful for tracking how the emotional tone of social media content or reports vary over time. 
+
+However, there are clearly defined issues that prevent significant statements from being made. The dataset assesses words independently, ignoring the context in which they appear. In everyday language, the meaning of words is often influenced by surrounding words, irony, or cultural references. For example, the word "sick" can be negative in everyday language but positive in slang ("that's sick"). As a result, the dataset lacks the ability to accurately capture sarcasm, slang, or complicated emotional expressions. Furthermore, because the evaluations come from a specific group of Mechanical Turk annotators, the score may reflect a specific cultural perspective rather than universal interpretations.
+
+If the dataset were rebuilt today, various enhancements may increase its reliability.
+- First, words could potentially be evaluated in brief phrases rather than each one individually, allowing context to contribute to scores. 
+- Second, the data set can consider including a more diversified range of annotators from various cultural and linguistic backgrounds, in order to reduce bias scores. 
+- Finally, increasing the dataset to include other languages and modern and contemporary forms of language use (such as online slang and emojis) will improve the tool's capacity for evaluating and analyzing modern digital communication.’
+
 
 ---
 
@@ -328,7 +336,8 @@ The dataset was built using words from specific sources: Twitter, Google Books, 
 - Qualitative exhibit: Yiting Jiao
 
 - Critical reflection: 
-6.1 & 6.2 Lilli 
+6.1 & 6.2 Lilli, 6.3 Enas
+
 
 
 ### Citation
