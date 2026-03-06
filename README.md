@@ -331,7 +331,7 @@ If the dataset were rebuilt today, various enhancements may increase its reliabi
   1.1 & 1.2 Yiting Jiao
   1.3 Lilli 
 
-- Quantitative analysis: Tia & Floria
+- Quantitative analysis: Tia & Leyang Fan
 
 - Qualitative exhibit: Yiting Jiao
 
