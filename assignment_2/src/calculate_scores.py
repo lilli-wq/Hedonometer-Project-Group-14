@@ -27,10 +27,10 @@ def get_happiness_score(text):
         return None 
 
 # 2. read the cleaned dataset
-df = pd.read_csv('data/processed/met_cleaned_data.csv')
+df = pd.read_csv('assignment_2/data/processed/met_cleaned_data.csv')
 
 # 3. calculate happiness scores for each title and add as a new column
 df['happiness_score'] = df['title'].apply(get_happiness_score)
 
 # 4. update the dataset with the new column and save it
-df.to_csv('data/processed/met_with_scores.csv', index=False)
+df.to_csv('assignment_2/data/processed/met_with_scores.csv', index=False)
