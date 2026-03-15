@@ -1,5 +1,7 @@
 # Hedonometer Project – Group 14
 
+# Assignment 1
+
 ## 1. Overview
 
 This project explores the labMT 1.0 dataset (“Language Assessment by Mechanical Turk”), 
@@ -346,3 +348,121 @@ Dataset:
 Dodds, P. S., Harris, K. D., Kloumann, I. M., Bliss, C. A., & Danforth, C. M. (2011).  
 *Temporal patterns of happiness and information in a global social network: Hedonometrics and Twitter.*  
 PLOS ONE, 6(12), e26752. https://doi.org/10.1371/journal.pone.0026752
+
+
+
+# Assignment 2 – Hedonometer Project: Met Photographs
+
+## 1. Project Overview
+
+This project analyzes emotional language in the titles of photographs from the Metropolitan Museum of Art collection.
+Using the Hedonometer lexicon, we compute happiness scores for artwork titles and compare emotional language across two historical periods: 1900–1950 and 1951–2000.
+
+## 2. Research Question
+
+## 3. Data Source
+
+This project uses data from the Metropolitan Museum of Art Collection API, which provides open access to metadata for artworks in the museum’s collection. The API contains information on more than 470,000 artworks and includes fields such as title, artist name, artist nationality, object date, classification, and department.
+
+The API is publicly available and does not require authentication or API keys. Documentation for the API can be found at:
+
+https://metmuseum.github.io/
+
+For this project, data was retrieved programmatically using Python and the requests library. We accessed the /objects endpoint to obtain object IDs from the Photographs department, and then queried the /objects/{id} endpoint to retrieve detailed metadata for each artwork.
+
+The collected data was then filtered locally based on specific criteria relevant to the research question. In particular, we retained works that:
+
+belong to the Photographs department
+
+were created by artists with American nationality
+
+fall within the selected historical time ranges (1900–1950 and 1951–2000)
+
+All metadata used in this project is derived from the Met’s publicly available collection database. The fetch scripts included in this repository allow the dataset to be reproduced directly from the API.
+
+## 4. Data Collection (API Fetching)
+
+Filtering Criteria
+
+Dataset 1: 
+
+  Department - Photographs
+
+  Artist nationality - American
+
+  Date overlap - 1900–1950
+
+Dataset 2:
+
+  Department - Photographs
+
+  Artist nationality - American
+
+  Date overlap - 1951–2000
+
+# Fetch Scripts
+src/fetch_met_photographs_data_1900_1950.py
+src/fetch_met_photographs_data_1951_2000.py
+
+# Dataset Size
+1900–1950 : 1000 artworks
+1951–2000 : 860 artworks
+
+The fetch scripts retrieve object IDs from the Photographs department and then request detailed metadata for each object individually. To ensure stable data collection, the scripts implement request throttling (a delay between requests), retry logic for temporary API errors, and deduplication based on unique title–artist pairs.
+
+Although the target size was 1000 records for both periods, the second dataset contains fewer entries after applying the filtering criteria and deduplication. This occurs because some objects do not meet the required conditions (e.g., missing nationality metadata or dates outside the specified range), and repeated title–artist combinations are removed to avoid duplicates.
+
+## 5. Data Processing
+
+
+## 6. Happiness Score Calculation
+
+To measure emotional content in artwork titles, we use the Hedonometer method based on the labMT word list.
+
+The process consists of three steps:
+
+# Tokenization
+Titles are split into individual words.
+
+# Dictionary Matching
+Each word is matched with the labMT happiness dictionary, which assigns happiness scores on a scale from 1 (least happy) to 9 (most happy).
+
+# Score Calculation
+The happiness score of a title is computed as the average happiness score of its matched words.
+
+This produces a numerical sentiment value for each artwork title.
+
+
+## 7. Statistical Analysis
+
+After computing happiness scores for all titles, we perform statistical analysis to compare the two time periods.
+
+Key measures include:
+
+# Mean happiness score for each dataset
+
+# Distribution of happiness scores
+
+# Comparative analysis between periods
+
+Sampling and estimation techniques are used to interpret differences between the two groups while accounting for variation in the data.
+
+## 8. Visualization
+
+To communicate the results clearly, we generate several visualizations, including:
+
+# Histograms showing the distribution of happiness scores
+
+# Comparison plots between the two time periods
+
+# Trend visualizations illustrating potential changes in emotional language over time
+
+These visualizations help illustrate how emotional tone in photography titles may have evolved between the two historical periods.
+
+
+## 9. Credits
+
+
+
+
+### Citation
