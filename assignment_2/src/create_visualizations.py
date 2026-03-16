@@ -15,9 +15,8 @@ df = df.dropna(subset=["happiness_score"])
 print("Loaded dataset.")
 print(f"Total artworks: {len(df)}")
 
-# =====================================================
 # Histogram 1: Overall distribution of happiness scores
-# =====================================================
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 ax.hist(df["happiness_score"], bins=30, color="steelblue", edgecolor="black", alpha=0.7)
@@ -32,9 +31,9 @@ plt.savefig(FIGURES_DIR / "happiness_distribution_overall.png", dpi=300, bbox_in
 print(f"Saved: happiness_distribution_overall.png")
 plt.close()
 
-# =====================================================
+
 # Visualization: Density plots by period (smooth comparison)
-# =====================================================
+
 fig, ax = plt.subplots(figsize=(11, 6))
 
 period_1900_1950 = df[df["period"] == "1900-1950"]["happiness_score"]
@@ -61,9 +60,9 @@ plt.savefig(FIGURES_DIR / "happiness_distribution_by_period.png", dpi=300, bbox_
 print(f"Saved: happiness_distribution_by_period.png")
 plt.close()
 
-# =====================================================
+
 # Box plots by period (highlight quartiles & outliers)
-# =====================================================
+
 fig, ax = plt.subplots(figsize=(10, 6))
 
 data_to_plot = [period_1900_1950, period_1951_2000]
@@ -87,9 +86,9 @@ plt.close()
 
 plt.close()
 
-# =====================================================
+
 # Trend plot: Happiness by decade
-# =====================================================
+
 fig, ax = plt.subplots(figsize=(12, 6))
 
 # Create decade bins
@@ -132,9 +131,9 @@ plt.savefig(FIGURES_DIR / "happiness_trend_by_decade.png", dpi=300, bbox_inches=
 print(f"Saved: happiness_trend_by_decade.png")
 plt.close()
 
-# =====================================================
+
 # Trend plot: Happiness by year
-# =====================================================
+
 fig, ax = plt.subplots(figsize=(12, 6))
 
 # Use objectBeginDate as the year

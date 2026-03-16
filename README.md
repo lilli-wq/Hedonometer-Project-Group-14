@@ -348,14 +348,11 @@ Dataset:
 Dodds, P. S., Harris, K. D., Kloumann, I. M., Bliss, C. A., & Danforth, C. M. (2011).  
 *Temporal patterns of happiness and information in a global social network: Hedonometrics and Twitter.*  
 PLOS ONE, 6(12), e26752. https://doi.org/10.1371/journal.pone.0026752
+  
+   
+<br>
 
-
-
-
-
-
-
-
+---   
 
 
 # Assignment 2 – Hedonometer Project: Met Photographs
