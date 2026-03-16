@@ -351,6 +351,13 @@ PLOS ONE, 6(12), e26752. https://doi.org/10.1371/journal.pone.0026752
 
 
 
+
+
+
+
+
+
+
 # Assignment 2 – Hedonometer Project: Met Photographs
 
 ## 1. Project Overview
@@ -359,7 +366,7 @@ This project analyzes emotional language in the titles of photographs from the M
 Using the Hedonometer lexicon, we compute happiness scores for artwork titles and compare emotional language across two historical periods: 1900–1950 and 1951–2000.
 
 ## 2. Research Question
-
+To what extent did the emotional tone of American photographic artwork titles become more positive between the first and second half of the twentieth century?
 ## 3. Data Source
 
 This project uses data from the Metropolitan Museum of Art Collection API, which provides open access to metadata for artworks in the museum’s collection. The API contains information on more than 470,000 artworks and includes fields such as title, artist name, artist nationality, object date, classification, and department.
@@ -514,20 +521,50 @@ Overall, the analysis suggests that photograph titles from 1951–2000 tend to b
 
 ## 8. Visualization
 
-To communicate the results clearly, we generate several visualizations, including:
+### Histograms showing the distribution of happiness scores
 
-# Histograms showing the distribution of happiness scores
+**Overall Distribution**
 
-# Comparison plots between the two time periods
+![Distribution of Happiness Scores](assignment_2/figures/happiness_distribution_overall.png)
+
+This histogram displays the complete distribution of happiness scores across all 1,797 artworks in our dataset. The distribution is centered between 5.0 and 6.0, reflecting a general tendency toward neutral and positive language in photograph titles.
+
+### Comparison plots between the two time periods
+
+**Distribution by Period (Density Plot)**
+
+![Happiness Score Distribution by Period](assignment_2/figures/happiness_distribution_by_period.png)
+
+The density plot compares happiness scores between the two time periods (1900–1950 and 1951–2000). The smooth curves make it easier to compare the shapes of the distributions (as opposed to two merged histograms in one chart). Dashed vertical lines indicate the mean happiness score for each period. The slight rightward shift of the 1951–2000 distribution suggests that later photographs tend to have slightly more positive titles. Yet, as mentioned earlier in the comparative analysis you can see that afzter 1951 there is only a slight increase in positive words in the artworks' titles.
+
+**Distribution by Period (Box Plot)**
+
+![Happiness Score Box Plot](assignment_2/figures/happiness_boxplot_by_period.png)
+
+In order to visualize whether one period has higher scores and to showcase outliers, we decided to also visualize our results in 2 boxplots. This box plot provides a quartile-based comparison, clearly showing the median (middle line in each box), the spread of the middle 50% of the data (the box itself), and outliers (individual points). This visualization makes it easy to identify whether one period has systematically higher or lower happiness values. Looking closely, it is visible that the 1951 - 2000 period box is higher, but there are also more outliers towards lower happiness scores (which indicates a small contradiction that could be followed up on).
+
+
+
 
 # Trend visualizations illustrating potential changes in emotional language over time
 
-These visualizations help illustrate how emotional tone in photography titles may have evolved between the two historical periods.
+**Happiness Trends by Decade (1900–2000)** | **Happiness Trends by Year (1900–2000)**
+---|---
+![Happiness Trend by Decade](assignment_2/figures/happiness_trend_by_decade.png) | ![Happiness Trend by Year](assignment_2/figures/happiness_trend_by_year.png)
 
+The decade plot reveals the broad historical trajectory, while the year plot captures more detailed volatility and year-specific fluctuations. The year plot then reveals which exact years had notably higher or lower happiness scores, potentially corresponding to specific historical moments, artistic movements, or cultural shifts. The decade plot looks at the long-term trend, while the year plot looks at which specific years were outliers.
 
 ## 9. Credits
-
-
+1. Data acquisition: Yiting Jiao 
+2. Data processing: Leyang Fan  
+3. Happiness score calculation - Xingyue Peng 
+4. Statistical analysis - Enas Mola Khater 
+5. Visualization - Lilli Labroue
 
 
 ### Citation
+1. Metropolitan Museum of Art. 2020. The Metropolitan Museum of Art Collection API Documentation.
+https://metmuseum.github.io/ 2. Dodds, Peter Sheridan, Kameron Decker Harris, Isabel M. Kloumann, Catherine A. Bliss, and Christopher M. Danforth. 2011.
+“Temporal Patterns of Happiness and Information in a Global-Scale Social Network: Hedonometrics and Twitter.”
+PLoS ONE 6 (12): e26752. https://doi.org/10.1371/journal.pone.0026752
+.
