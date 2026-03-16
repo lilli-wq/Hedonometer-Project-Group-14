@@ -413,7 +413,52 @@ The fetch scripts retrieve object IDs from the Photographs department and then r
 Although the target size was 1000 records for both periods, the second dataset contains fewer entries after applying the filtering criteria and deduplication. This occurs because some objects do not meet the required conditions (e.g., missing nationality metadata or dates outside the specified range), and repeated title–artist combinations are removed to avoid duplicates.
 
 ## 5. Data Processing
+In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon.
 
+#Input Data
+
+The raw data were collected in Part 1 and stored as two JSON files representing different time periods of photographic artworks:
+	•	met_photographs_american_1900_1950_raw.json
+	•	met_photographs_american_1951_2000_raw.json
+
+Each file contains metadata for artworks from the Photographs department where the artist nationality is American.
+
+#Processing Steps
+
+The following preprocessing steps were applied:
+	1.	Load raw datasets
+The two JSON files were loaded into pandas dataframes.
+	2.	Merge datasets
+The two time-period datasets were merged into a single dataframe.
+A new variable period was added to indicate the corresponding time range (1900–1950 or 1951–2000).
+	3.	Select relevant metadata
+Key metadata fields were retained for analysis, including:
+	•	objectID
+	•	title
+	•	artistDisplayName
+	•	artistNationality
+	•	objectDate
+	•	objectBeginDate
+	•	objectEndDate
+	•	classification
+	•	medium
+	•	repository
+	•	objectURL
+	•	period
+	4.	Remove missing titles
+Records with missing or empty titles were removed, since titles are the textual input used for sentiment analysis.
+	5.	Text normalization
+Artwork titles were normalized by:
+	•	converting all text to lowercase
+	•	removing punctuation and numbers
+	•	collapsing multiple spaces
+The cleaned titles were stored in a new column called clean_title.
+
+#Output Data
+
+The processed dataset was saved as:
+assignment_2/data/cache/processed_photographs_titles.csv
+The final processed dataset contains 1997 records.
 
 ## 6. Happiness Score Calculation
 
