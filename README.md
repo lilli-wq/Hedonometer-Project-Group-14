@@ -415,7 +415,7 @@ Although the target size was 1000 records for both periods, the second dataset c
 ## 5. Data Processing
 In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon.
 
-#Input Data
+# Input Data
 
 The raw data were collected in Part 1 and stored as two JSON files representing different time periods of photographic artworks:
 	•	met_photographs_american_1900_1950_raw.json
@@ -423,7 +423,7 @@ The raw data were collected in Part 1 and stored as two JSON files representing 
 
 Each file contains metadata for artworks from the Photographs department where the artist nationality is American.
 
-#Processing Steps
+# Processing Steps
 
 The following preprocessing steps were applied:
 	1.	Load raw datasets
@@ -454,7 +454,7 @@ Artwork titles were normalized by:
 	•	collapsing multiple spaces
 The cleaned titles were stored in a new column called clean_title.
 
-#Output Data
+# Output Data
 
 The processed dataset was saved as:
 assignment_2/data/cache/processed_photographs_titles.csv
