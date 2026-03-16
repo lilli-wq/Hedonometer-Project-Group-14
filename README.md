@@ -441,11 +441,31 @@ Key measures include:
 
 # Mean happiness score for each dataset
 
+Before conducting the statistical analysis, rows with missing happiness score values were removed. This step ensured that only titles with valid numerical scores were included in the analysis. After this filtering step, the dataset used for the analysis contained 1797 titles in total, including 904 titles from the 1900–1950 period and 893 titles from the 1951–2000 period.
+
+Next, the mean happiness score was calculated for each period. The mean score for the period of 1900–1950 was 5.6996, while the mean for the period of 1951–2000 was 5.7574.  
+
 # Distribution of happiness scores
+
+To examine the distribution of happiness scores, we computed summary statistics including the median, standard deviation, and selected percentiles for each period.
+
+For the period of 1900–1950, the median happiness score was 5.704, with most scores falling between approximately 5.38 and 6.00(25th–75th percentile range). Scores ranged from 3.57 to 7.92.
+
+For the period from 1951–2000, the median happiness score was 5.743, with most scores falling between approximately 5.44 and 6.07. Scores ranged from 3.10 to 7.94.
+
+These statistics indicate that both periods have broadly similar distributions of happiness scores, with the later period showing a slightly higher central tendency.
+
 
 # Comparative analysis between periods
 
 Sampling and estimation techniques are used to interpret differences between the two groups while accounting for variation in the data.
+
+To compare the two periods more formally, we calculated the difference in mean happiness scores between the later period and the earlier period. This resulted in a difference of 0.0578, suggesting that titles from the later period were slightly more positive on average.
+
+To estimate the uncertainty of this difference, a bootstrap method with 2000 resamples was used. In each resample, titles were randomly sampled with replacement from both periods, and the difference in mean happiness scores was recalculated. The 95% bootstrap confidence interval for the difference in means was 0.0102 to 0.1055. Since this interval lies entirely above zero, the results suggest a small positive shift in happiness scores in the later period.
+
+Overall, the analysis suggests that photograph titles from 1951–2000 tend to be slightly more positive or expressive than those from 1900–1950, although the overall difference remains relatively small.
+
 
 ## 8. Visualization
 
