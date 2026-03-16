@@ -422,15 +422,15 @@ To measure emotional content in artwork titles, we use the Hedonometer method ba
 The process consists of three steps:
 
 # Tokenization
-Titles are split into individual words.
+Titles are converted to lowercase and split into individual words. To improve matching accuracy, we implemented a punctuation stripping process that removes characters such as "()" from each word. This ensures that a word can be matched with the same form in the dictionary.
 
 # Dictionary Matching
-Each word is matched with the labMT happiness dictionary, which assigns happiness scores on a scale from 1 (least happy) to 9 (most happy).
+During the initial loading phase, we skipped the descriptive metadata headers in the raw labMT file to ensure data alignment. Each word is matched with the labMT happiness dictionary, which assigns happiness scores on a scale from 1 (least happy) to 9 (most happy). Furthermore, any words not found or matched in the dictionary are excluded from the calculation, which prevents the final scores from being effected by unrecognized terms.
 
 # Score Calculation
 The happiness score of a title is computed as the average happiness score of its matched words.
-
-This produces a numerical sentiment value for each artwork title.
+This process successfully scored 1797 out of 1997 artwork titles, achiving a coverage rate of approximately 90%. Titles with no matching words are assigned with a NAN value. By excluding invalid data points, this ensures the objectivity and consistency of the subsequent statistical analysis.
+This produces a numerical sentiment value for each artwork title, enabling a comparative analysis of emotional trends over the 20th century being processed.
 
 
 ## 7. Statistical Analysis
