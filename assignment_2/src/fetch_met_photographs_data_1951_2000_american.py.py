@@ -1,3 +1,25 @@
+"""
+Script: fetch_met_photographs_data_1900_1950_american.py
+
+Purpose:
+Fetch photograph records from the Metropolitan Museum of Art API
+for works that satisfy ALL of the following:
+
+1. Department: Photographs (departmentId = 19)
+2. Artist nationality contains 'American'
+3. Date overlaps with 1951–2000
+4. Deduplicated by (title, artistDisplayName)
+
+Output:
+- Raw JSON dataset saved to:
+  data/raw/met_photographs_american_1900_1950_raw.json
+
+Notes:
+- Uses retry + backoff to avoid API blocking
+- Saves progress incrementally
+- Stops after collecting TARGET_COUNT records
+"""
+
 import json
 import time
 from pathlib import Path
@@ -18,9 +40,9 @@ API = "https://collectionapi.metmuseum.org/public/collection/v1"
 DEPARTMENT_ID = 19
 
 # Notes:
-# We keep works whose date range overlaps with 1900–1950, inclusive.
-DATE_BEGIN = 1900
-DATE_END = 1950
+# We keep works whose date range overlaps with 1951–2000, inclusive.
+DATE_BEGIN = 1951
+DATE_END = 2000
 
 # Notes:
 # Stop once we collect 1000 unique records.
@@ -64,8 +86,8 @@ CACHE_DIR = BASE_DIR / "data" / "cache"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-OUTPUT_FILE = RAW_DIR / "met_photographs_american_1900_1950_raw.json"
-IDS_FILE = CACHE_DIR / "met_photographs_department_ids.json"
+OUTPUT_FILE = RAW_DIR / "met_photographs_american_1951_2000_raw.json"
+IDS_FILE = CACHE_DIR / "met_photographs_department_ids_1951_2000.json"
 
 
 # ============================================================
@@ -93,10 +115,10 @@ def nationality_ok(obj):
 def date_ok(obj):
     """
     Notes:
-    Keep works whose date range overlaps with 1900–1950, inclusive.
+    Keep works whose date range overlaps with 1951–2000, inclusive.
 
     Overlap logic:
-    objectEndDate >= 1900 AND objectBeginDate <= 1950
+    objectEndDate >= 1951 AND objectBeginDate <= 2000
     """
     begin = obj.get("objectBeginDate")
     end = obj.get("objectEndDate")
@@ -217,7 +239,7 @@ def fetch_objects(session, ids):
     For each object ID:
     1. Fetch full metadata
     2. Keep only works whose artistNationality contains 'American'
-    3. Keep only works whose date overlaps with 1900–1950
+    3. Keep only works whose date overlaps with 1951–2000
     4. Deduplicate by unique (title, artistDisplayName)
     5. Save progress periodically
     """
@@ -320,7 +342,7 @@ def main():
     1. Create a requests session
     2. Fetch all Photographs department IDs
     3. Fetch metadata one object at a time
-    4. Filter for American artists and 1900–1950 overlap
+    4. Filter for American artists and 1951–2000 overlap
     5. Deduplicate by (title, artist)
     6. Save progress and final output
     """
