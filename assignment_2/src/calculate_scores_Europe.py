@@ -2,12 +2,12 @@ import pandas as pd
 import os
 
 #1. define file paths
-INPUT_FILE = 'assignment_2/data/cache/processed_photographs_titles.csv'
+INPUT_FILE = 'assignment_2/data/cache/processed_titles_european.csv'
 
 LABMT_FILE = 'assignment_2/data/Data_Set_S1.txt' 
 
 OUTPUT_DIR = 'assignment_2/data/processed/'
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'met_with_scores.csv')
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, 'calculated_scores_Europe.csv')
 
 # 2.load labMT dictionary
 print("loading labMT dictionary...")
