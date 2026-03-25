@@ -490,7 +490,7 @@ During the initial loading phase, we skipped the descriptive metadata headers in
 
 ### Score Calculation
 The happiness score of a title is computed as the average happiness score of its matched words.
-This process successfully scored 1797 out of 1997 artwork titles, achiving a coverage rate of approximately 90%. Titles with no matching words are assigned with a NAN value. By excluding invalid data points, this ensures the objectivity and consistency of the subsequent statistical analysis.
+Our first step is to analyze the data from America. This process successfully scored 1797 out of 1997 artwork titles, achiving a coverage rate of approximately 90%. Titles with no matching words are assigned with a NAN value. Then the same steps with the European data were performed, 1629 out of 1999 titles paired with the dictionary successfully. By excluding invalid data points, this ensures the objectivity and consistency of the subsequent statistical analysis.
 This produces a numerical sentiment value for each artwork title, enabling a comparative analysis of emotional trends over the 20th century being processed.
 
 
