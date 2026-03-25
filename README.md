@@ -387,9 +387,9 @@ All metadata used in this project is derived from the Met’s publicly available
 
 ## 4. Data Collection (API Fetching)
 
-Filtering Criteria
+### Filtering Criteria:
 
-Dataset 1: 
+#### Dataset 1: 
 
   Department 19 - Photographs
 
@@ -397,7 +397,7 @@ Dataset 1:
 
   Date overlap - 1900–1950
 
-Dataset 2:
+#### Dataset 2:
 
   Department 19 - Photographs
 
