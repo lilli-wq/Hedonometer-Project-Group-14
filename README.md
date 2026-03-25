@@ -363,7 +363,8 @@ This project analyzes emotional language in the titles of photographs from the M
 Using the Hedonometer lexicon, we compute happiness scores for artwork titles and compare emotional language across two historical periods: 1900–1950 and 1951–2000.
 
 ## 2. Research Question
-To what extent did the emotional tone of American photographic artwork titles become more positive between the first and second half of the twentieth century?
+To what extent do European and American photograph titles show different changes in emotional tone before and after World War II ?
+
 ## 3. Data Source
 
 This project uses data from the Metropolitan Museum of Art Collection API, which provides open access to metadata for artworks in the museum’s collection. The API contains information on more than 470,000 artworks and includes fields such as title, artist name, artist nationality, object date, classification, and department.
