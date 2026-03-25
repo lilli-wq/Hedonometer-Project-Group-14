@@ -360,7 +360,7 @@ PLOS ONE, 6(12), e26752. https://doi.org/10.1371/journal.pone.0026752
 ## 1. Project Overview
 
 This project analyzes emotional language in the titles of photographs from the Metropolitan Museum of Art collection.
-Using the Hedonometer lexicon, we compute happiness scores for artwork titles and compare emotional language across two historical periods: 1900–1950 and 1951–2000.
+Using the Hedonometer lexicon, we compute happiness scores for artwork titles and compare emotional language across two historical periods (1900–1950 and 1951–2000) and across different contexts (American vs. European Artwork). 
 
 ## 2. Research Question
 To what extent do European and American photograph titles show different changes in emotional tone before and after World War II ?
@@ -377,11 +377,11 @@ For this project, data was retrieved programmatically using Python and the reque
 
 The collected data was then filtered locally based on specific criteria relevant to the research question. In particular, we retained works that:
 
-belong to the Photographs department
+- belong to the Photographs department
 
-were created by artists with American nationality
+- were created by artists with 1. American nationality and 2. European Nationality
 
-fall within the selected historical time ranges (1900–1950 and 1951–2000)
+- fall within the selected historical time ranges (1900–1950 and 1951–2000)
 
 All metadata used in this project is derived from the Met’s publicly available collection database. The fetch scripts included in this repository allow the dataset to be reproduced directly from the API.
 
@@ -391,7 +391,7 @@ Filtering Criteria
 
 Dataset 1: 
 
-  Department - Photographs
+  Department 19 - Photographs
 
   Artist nationality - American
 
@@ -399,17 +399,19 @@ Dataset 1:
 
 Dataset 2:
 
-  Department - Photographs
+  Department 19 - Photographs
 
   Artist nationality - American
 
   Date overlap - 1951–2000
 
-# Fetch Scripts
+
+
+### Fetch Scripts
 src/fetch_met_photographs_data_1900_1950.py
 src/fetch_met_photographs_data_1951_2000.py
 
-# Dataset Size
+### Dataset Size
 1900–1950 : 1000 artworks
 1951–2000 : 860 artworks
 
@@ -418,9 +420,10 @@ The fetch scripts retrieve object IDs from the Photographs department and then r
 Although the target size was 1000 records for both periods, the second dataset contains fewer entries after applying the filtering criteria and deduplication. This occurs because some objects do not meet the required conditions (e.g., missing nationality metadata or dates outside the specified range), and repeated title–artist combinations are removed to avoid duplicates.
 
 ## 5. Data Processing
-In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon.
+In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon. 
 
-# Input Data
+
+### Input Data
 
 The raw data were collected in Part 1 and stored as two JSON files representing different time periods of photographic artworks:
 	•	met_photographs_american_1900_1950_raw.json
@@ -428,38 +431,46 @@ The raw data were collected in Part 1 and stored as two JSON files representing 
 
 Each file contains metadata for artworks from the Photographs department where the artist nationality is American.
 
-# Processing Steps
+### Processing Steps
 
 The following preprocessing steps were applied:
-	1.	Load raw datasets
-The two JSON files were loaded into pandas dataframes.
-	2.	Merge datasets
-The two time-period datasets were merged into a single dataframe.
-A new variable period was added to indicate the corresponding time range (1900–1950 or 1951–2000).
-	3.	Select relevant metadata
-Key metadata fields were retained for analysis, including:
-	•	objectID
-	•	title
-	•	artistDisplayName
-	•	artistNationality
-	•	objectDate
-	•	objectBeginDate
-	•	objectEndDate
-	•	classification
-	•	medium
-	•	repository
-	•	objectURL
-	•	period
-	4.	Remove missing titles
+1. Load raw datasets
+   The two JSON files were loaded into pandas dataframes.
+
+2. Merge datasets
+  The two time-period datasets were merged into a single dataframe.
+  A new variable period was added to indicate the corresponding time range (1900–1950 or 1951–2000).
+      
+3. Select relevant metadata
+ Key metadata fields were retained for analysis, including:
+
+	    •	objectID
+	    •	title
+	    •	artistDisplayName
+	    •	artistNationality
+	    •	objectDate
+	    •	objectBeginDate
+	    •	objectEndDate
+	    •	classification
+	    •	medium
+	    •	repository
+	    •	objectURL
+	    •	period
+
+4. Remove missing titles
 Records with missing or empty titles were removed, since titles are the textual input used for sentiment analysis.
-	5.	Text normalization
+
+5. Text normalization
 Artwork titles were normalized by:
 	•	converting all text to lowercase
 	•	removing punctuation and numbers
 	•	collapsing multiple spaces
 The cleaned titles were stored in a new column called clean_title.
 
-# Output Data
+6. To avoid overrepresentation of highly prolific artists within the Met collection, we restricted the dataset to one observation per artist. This reduces bias introduced by unequal numbers of works per artist and better aligns with the assumption of independent observations. While this approach limits the ability to capture variation within an individual artist’s work, it allows for a more balanced comparison across time periods and regions.
+
+
+### Output Data
 
 The processed dataset was saved as:
 assignment_2/data/cache/processed_photographs_titles.csv
@@ -471,13 +482,13 @@ To measure emotional content in artwork titles, we use the Hedonometer method ba
 
 The process consists of three steps:
 
-# Tokenization
+### Tokenization
 Titles are converted to lowercase and split into individual words. To improve matching accuracy, we implemented a punctuation stripping process that removes characters such as "()" from each word. This ensures that a word can be matched with the same form in the dictionary.
 
-# Dictionary Matching
+### Dictionary Matching
 During the initial loading phase, we skipped the descriptive metadata headers in the raw labMT file to ensure data alignment. Each word is matched with the labMT happiness dictionary, which assigns happiness scores on a scale from 1 (least happy) to 9 (most happy). Furthermore, any words not found or matched in the dictionary are excluded from the calculation, which prevents the final scores from being effected by unrecognized terms.
 
-# Score Calculation
+### Score Calculation
 The happiness score of a title is computed as the average happiness score of its matched words.
 This process successfully scored 1797 out of 1997 artwork titles, achiving a coverage rate of approximately 90%. Titles with no matching words are assigned with a NAN value. By excluding invalid data points, this ensures the objectivity and consistency of the subsequent statistical analysis.
 This produces a numerical sentiment value for each artwork title, enabling a comparative analysis of emotional trends over the 20th century being processed.
@@ -489,13 +500,13 @@ After computing happiness scores for all titles, we perform statistical analysis
 
 Key measures include:
 
-# Mean happiness score for each dataset
+### Mean happiness score for each dataset
 
 Before conducting the statistical analysis, rows with missing happiness score values were removed. This step ensured that only titles with valid numerical scores were included in the analysis. After this filtering step, the dataset used for the analysis contained 1797 titles in total, including 904 titles from the 1900–1950 period and 893 titles from the 1951–2000 period.
 
 Next, the mean happiness score was calculated for each period. The mean score for the period of 1900–1950 was 5.6996, while the mean for the period of 1951–2000 was 5.7574.  
 
-# Distribution of happiness scores
+### Distribution of happiness scores
 
 To examine the distribution of happiness scores, we computed summary statistics including the median, standard deviation, and selected percentiles for each period.
 
@@ -506,7 +517,7 @@ For the period from 1951–2000, the median happiness score was 5.743, with most
 These statistics indicate that both periods have broadly similar distributions of happiness scores, with the later period showing a slightly higher central tendency.
 
 
-# Comparative analysis between periods
+### Comparative analysis between periods
 
 Sampling and estimation techniques are used to interpret differences between the two groups while accounting for variation in the data.
 
