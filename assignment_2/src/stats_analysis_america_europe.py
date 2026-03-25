@@ -63,7 +63,7 @@ print(summary)
 print("\nStandard deviations by region and period:")
 print(summary[["region", "period", "std"]])
 
-summary.to_csv(OUTPUTS_DIR / "summary_stats_final_project.csv", index=False)
+summary.to_csv(OUTPUTS_DIR / "summary_stats_america_europe.csv", index=False)
 
 # ---------------------------------------------------
 # 4. Function for bootstrap confidence interval
@@ -123,7 +123,7 @@ comparisons_df = pd.DataFrame(comparisons)
 print("\nBootstrap comparisons:")
 print(comparisons_df)
 
-comparisons_df.to_csv(OUTPUTS_DIR / "bootstrap_comparisons_final_project.csv", index=False)
+comparisons_df.to_csv(OUTPUTS_DIR / "bootstrap_comparisons_america_europe.csv", index=False)
 
 # ---------------------------------------------------
 # 7. Difference-in-differences
@@ -167,4 +167,4 @@ did_df = pd.DataFrame([{
 print("\nDID bootstrap CI:")
 print(did_df)
 
-did_df.to_csv(OUTPUTS_DIR / "difference_in_differences_final_project.csv", index=False)
+did_df.to_csv(OUTPUTS_DIR / "difference_in_differences_america_europe.csv", index=False)
