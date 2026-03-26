@@ -762,6 +762,32 @@ This box plot provides a quartile-based comparison for European photographs. Sim
 
 The European trend plots reveal similar patterns to the American data, with relatively stable emotional tones across both decades and individual years. The year-level plot shows the detailed fluctuations in European photograph titles over the 100-year period.
 
+### Comparative Analysis: American vs European Photographs (1900–1950 vs 1951–2000)
+
+**Mean Happiness Scores Across All Groups**
+
+![Grouped Bar Chart Comparison](assignment_2/figures/comparison_mean_happiness_all_groups.png)
+
+This bar chart provides a direct comparison of mean happiness scores for all four groups: American 1900–1950, American 1951–2000, European 1900–1950, and European 1951–2000. The grouped structure makes it easy to compare both regional differences and temporal shifts.
+
+**Overlaid Density Distributions**
+
+![Density Plot Overlay Comparison](assignment_2/figures/comparison_density_all_groups.png)
+
+This comprehensive density plot overlays all four distributions, showing the shape and spread of happiness scores across regions and time periods. The different colors and line styles distinguish between American (coral/red tones) and European (blue tones) photographs, as well as between the earlier period (1900–1950, dashed lines) and later period (1951–2000, solid lines). Vertical lines indicate the mean for each group.
+
+**Box Plot Comparison of All Groups**
+
+![Box Plot Comparison](assignment_2/figures/comparison_boxplot_all_groups.png)
+
+This side-by-side box plot comparison displays the quartiles, medians, means, and outliers for all four groups in a single visualization. This format makes it easy to identify differences in central tendency, spread, and the presence of extreme values across regions and time periods.
+
+**2×2 Subplot Grid: Detailed Group Histograms**
+
+![2x2 Subplot Comparison](assignment_2/figures/comparison_subplots_2x2_all_groups.png)
+
+This comprehensive 2×2 grid displays individual histograms for each of the four groups, allowing detailed examination of each distribution's shape while maintaining the comparative context. Each plot shows the frequency distribution for its respective group with the mean highlighted.
+
 ## 9. Credits
 1. Data acquisition: Yiting Jiao 
 2. Data processing: Leyang Fan  
