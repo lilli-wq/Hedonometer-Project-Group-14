@@ -93,7 +93,8 @@ The code calculates summary statistics, generates visualizations, and outputs ta
 ![Histogram of Happiness Scores](figures/happiness_average_hist.png)
 
 **Interpretation:**  
-The distribution of happiness scores follows a normal trend centered between 5.0 and 6.0, which demonstrates most words from corpus reflects netural and positive. The skew to the right reflects neutral and positive words outnumber negative ones, showing the nature of human communication is more focus on positive parts. The overall is generated as fan-shaped,illustrating that the disagreement increases as words become emotionally extreme.
+The distribution of happiness scores reveals a positivity bias centered between 5.0 and 6.0, indicating that the majority of the corpus consists of neutral to positive lexis. The rightward skew suggests that the words within this dataset are not emotional balanced, but rather weighted toward positive affect. Such pattern may reflect that linguistic habits in a social context, where affirmative language is prioritized for effective interaction.
+Furthermore, the scatter plot exhibits a distinctive fan-shaped distribution, illustrating that the semantic disagreement increases as words become emotionally extreme. Also, this divergence indicates that while neutral terms maintain a stable collective meaning, highly emotional words are more likely to be affected by individual subjectivity and contextual interpretation.
 
 ---
 
