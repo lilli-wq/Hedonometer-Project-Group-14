@@ -104,7 +104,9 @@ Furthermore, the scatter plot exhibits a distinctive fan-shaped distribution, il
 
 **Interpretation:**  
 The word “fucking” often acts as an affective intensifier rather than a direct expression of malice. However, in formal contexts, it is perceived as vulgar and impolite. Its SD of 2.92 is the highest in the set, indicating that participants lack of a linguistic consensus on this word. Similarly, “fuckin” is also used in casual discourse for emotional expression to foster social connection, yet it is associated with stereotypes of lower education levels. This high SD of 2.74 reflects divergent social perceptions. 
+
 Compared to the others, “fucked” is more indicative of self-deprecation or distress, and its low mean of 3.56 confirms a general consensus on its negative valence, while the high SD of 2.71 reveals a lack of agreement on reasonable use. While some apply it to express terriable circumstance, those who value etiquette still perceive it as a sign of rudeness.
+
 Furthermore, “pussy” exhibits notable semantic ambiguity.Its mean of 4.8 is near to neutral, but the high SD of 2.66 captures its interpretive dispute. It can express affection for cats but also functions as a negative symbol of weakness or extreme misogyny. Lastly, “whiskey” has the highest mean of 5.72 showing a generalpositive association, but the SD of 2.64 reflects that its value depends on peronal history with alcohol. For some, it represents as leisure and relaxation, while for those who associated with alcoholism, the word serves as a signifier of risk and loss of control.
 
 ---
