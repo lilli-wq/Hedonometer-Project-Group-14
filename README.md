@@ -453,29 +453,28 @@ Each dataset contains metadata for photographic artworks, including title, artis
 ### Processing Steps
 
 The following preprocessing steps were applied:
-The following preprocessing steps were applied:
-	1.	Load raw datasets
+1. Load raw datasets
 All JSON files were loaded into pandas dataframes.
-	2.	Merge datasets
+2. Merge datasets
 Datasets were merged into unified dataframes for each group (American and European).
 A new variable period was added to distinguish between the two time ranges.
-	3.	Add group identifier
+3. Add group identifier
 A variable group was introduced to distinguish between American and European datasets.
-	4.	Select relevant metadata
+4. Select relevant metadata
 Key fields were retained for analysis, including:
-	•	objectID
-	•	title
-	•	artistDisplayName
-	•	artistNationality
-	•	objectDate
-	•	objectBeginDate
-	•	objectEndDate
-	•	classification
-	•	medium
-	•	repository
-	•	objectURL
-	•	period
-	•	group
+- objectID
+- title
+- artistDisplayName
+- artistNationality
+- objectDate
+- objectBeginDate
+- objectEndDate
+- classification
+- medium
+- repository
+- objectURL
+- period
+- group
 5. Remove missing titles
 Records with missing or empty titles were removed, since titles are the textual input used for sentiment analysis.
 
@@ -521,7 +520,7 @@ Our first step is to analyze the data from America. This process successfully sc
 
 ## 7. Statistical Analysis
 
-After computing happiness scores for all titles, we perform statistical analysis to compare the two time periods.
+After computing happiness scores for all titles, we performed a statistical analysis to compare the two time periods.
 
 Key measures include:
 
@@ -629,7 +628,7 @@ Overall, the findings indicate that, while both regions' happiness levels have s
 
 This histogram displays the complete distribution of happiness scores across all 1,797 artworks in our dataset. The distribution is centered between 5.0 and 6.0, reflecting a general tendency toward neutral and positive language in photograph titles.
 
-### Comparison plots between the two time periods
+### Comparison plots between the two time periods American Artwork Titles
 
 **Distribution by Period (Density Plot)**
 
@@ -644,8 +643,6 @@ The density plot compares happiness scores between the two time periods (1900–
 In order to visualize whether one period has higher scores and to showcase outliers, we decided to also visualize our results in 2 boxplots. This box plot provides a quartile-based comparison, clearly showing the median (middle line in each box), the spread of the middle 50% of the data (the box itself), and outliers (individual points). This visualization makes it easy to identify whether one period has systematically higher or lower happiness values. Looking closely, it is visible that the 1951 - 2000 period box is higher, but there are also more outliers towards lower happiness scores (which indicates a small contradiction that could be followed up on).
 
 
-
-
 # Trend visualizations illustrating potential changes in emotional language over time
 
 **Happiness Trends by Decade (1900–2000)** | **Happiness Trends by Year (1900–2000)**
@@ -653,6 +650,14 @@ In order to visualize whether one period has higher scores and to showcase outli
 ![Happiness Trend by Decade](assignment_2/figures/happiness_trend_by_decade.png) | ![Happiness Trend by Year](assignment_2/figures/happiness_trend_by_year.png)
 
 The decade plot reveals the broad historical trajectory, while the year plot captures more detailed volatility and year-specific fluctuations. The year plot then reveals which exact years had notably higher or lower happiness scores, potentially corresponding to specific historical moments, artistic movements, or cultural shifts. The decade plot looks at the long-term trend, while the year plot looks at which specific years were outliers.
+
+
+### Comparison plots between the two time periods American Artwork Titles
+
+
+
+
+
 
 ## 9. Credits
 1. Data acquisition: Yiting Jiao 
