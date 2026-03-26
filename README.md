@@ -390,42 +390,52 @@ The collected data was then filtered locally based on specific criteria relevant
 
 All metadata used in this project is derived from the Met’s publicly available collection database. The fetch scripts included in this repository allow the dataset to be reproduced directly from the API.
 
-## 4. Data Collection (API Fetching)
+## 4. Methodology
+This project builds on the analytical framework developed in Assignment 1, where we explored the labMT 1.0 dataset and its application in hedonometer-based sentiment analysis. The methodological approach from Assignment 1 was adapted and extended to analyze artwork titles from the Metropolitan Museum of Art.
 
-### Filtering Criteria:
+### Data Preparation
 
-#### Dataset 1: 
+We collected four datasets of photograph titles from the Metropolitan Museum of Art API, categorized by region (American vs European) and time period (1900–1950 and 1951–2000).
 
-  Department 19 - Photographs
+The data was cleaned and structured into JSON format, with each record containing metadata such as title, artist, date, and nationality.
 
-  Artist nationality - American
+We applied the following preprocessing steps:
 
-  Date overlap - 1900–1950
+- Converted text fields to consistent string format  
+- Removed missing or invalid date records  
+- Deduplicated records based on (title, artistDisplayName)  
+- Ensured all datasets have a consistent size (1000 records each)  
 
-#### Dataset 2:
+### Sentiment Analysis Approach
 
-  Department 19 - Photographs
+Following Assignment 1, we use the **labMT 1.0 lexicon** as the basis for sentiment analysis.
 
-  Artist nationality - American
+Each artwork title is tokenized into individual words, and each word is matched against the labMT dataset to retrieve its corresponding happiness score.
 
-  Date overlap - 1951–2000
+The overall sentiment score for each title is calculated as the average happiness score of all matched words.
 
+This approach allows us to apply the hedonometer framework, originally designed for large text corpora, to shorter text units such as artwork titles.
 
+### Analytical Strategy
 
-### Fetch Scripts
-src/fetch_met_photographs_data_1900_1950.py
-src/fetch_met_photographs_data_1951_2000.py
+We extend the analytical logic from Assignment 1 in three ways:
 
-### Dataset Size
-1900–1950 : 1000 artworks
-1951–2000 : 1000 artworks
+- **Distribution Analysis**  
+  We examine the distribution of sentiment scores across datasets to identify general patterns.
 
-The fetch scripts retrieve object IDs from the Photographs department and then request detailed metadata for each object individually. To ensure stable data collection, the scripts implement request throttling (a delay between requests), retry logic for temporary API errors, and deduplication based on unique title–artist pairs.
+- **Comparative Analysis**  
+  We compare:
+  - American vs European datasets  
+  - 1900–1950 vs 1951–2000 time periods  
 
-Although the target size was 1000 records for both periods, the second dataset contains fewer entries after applying the filtering criteria and deduplication. This occurs because some objects do not meet the required conditions (e.g., missing nationality metadata or dates outside the specified range), and repeated title–artist combinations are removed to avoid duplicates.
+- **Outlier Exploration**  
+  We identify titles with unusually high or low sentiment scores to better understand extreme cases and potential biases.
 
-## 5. Data Processing
-In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon. 
+### Connection to Assignment 1
+
+Assignment 1 focused on understanding the structure and statistical properties of the labMT dataset. In Assignment 2, we operationalize that knowledge by applying the same sentiment framework to a new domain (artwork titles), enabling comparative analysis across regions and time periods.
+
+## 5. Data Collection (API Fetching)
 
 ## Research Design Update
 
@@ -439,6 +449,79 @@ This adjustment allows us to:
 - Examine whether regional context produces more distinguishable patterns than temporal changes alone
 
 By combining both temporal and regional dimensions, our dataset might support a more robust comparative analysis. This iterative approach also reflects a data-driven refinement of our research design.
+
+### Overview
+
+We collected photograph metadata from the Metropolitan Museum of Art Collection API. The dataset is organized into four subsets based on region and time period:
+
+- American Photographs (1900–1950)  
+- American Photographs (1951–2000)  
+- European Photographs (1900–1950)  
+- European Photographs (1951–2000)  
+
+Each dataset contains 1000 unique records and is stored in `data/raw/`.
+
+
+### Filtering Logic
+
+To ensure consistency and comparability across datasets, we applied the following filtering criteria:
+
+#### (1) Department = Photographs
+
+Only artworks from the Photographs department (`departmentId = 19`) were included.
+
+Restricting the dataset to a single artistic medium ensures that all records are comparable. Titles from different departments may reflect distinct conventions, styles, or curatorial practices. Without this restriction, differences in sentiment could be driven by medium (e.g., painting vs sculpture) rather than by region or time period.
+
+
+#### (2) Artist Nationality (American Dataset)
+
+For the American dataset, only artworks whose `artistNationality` contains “American” were included.
+
+Since the project aims to compare regional patterns in title sentiment, a clear and consistent definition of region is necessary. Using `artistNationality` provides a structured and reproducible way to define the American subset.
+
+
+#### (3) Date Filtering
+
+We retained artworks whose date ranges overlap with the target period.
+
+Specifically:
+- An artwork is included if its date range intersects with the target interval  
+- For example, a work dated 1890–1910 is included in the 1900–1950 dataset  
+- Records with missing `objectBeginDate` or `objectEndDate` were excluded  
+
+This overlapping logic is more inclusive and historically appropriate than requiring artworks to fall entirely within a time period. At the same time, removing records with missing dates ensures that all objects can be reliably assigned to a temporal category.
+
+
+#### (4) Deduplication
+
+To avoid duplicates, records were deduplicated based on the combination of `(title, artistDisplayName)`.
+
+Without this step, repeated or highly similar records could distort sentiment analysis by overrepresenting certain titles or artists. In addition, some artists produce multiple works centered on similar subjects or themes. If these works are repeatedly included, the dataset may become biased toward specific topics, reducing overall diversity.
+
+Deduplication helps mitigate this issue by limiting overrepresentation and ensuring a broader range of subjects and expressions.
+
+
+#### (5) Handling Failed API Requests
+
+Failed API requests were skipped after several retry attempts.
+
+This ensures that temporary issues such as rate limits or network errors do not interrupt the entire data collection process. Skipping a small number of failed requests improves robustness while maintaining overall dataset quality.
+
+
+#### (6) Notes on Title Filtering
+
+We did not restrict titles such as “Untitled” or limit the dataset to English-only titles.
+
+This decision was partly motivated by data availability constraints. Compared to the American datasets, the European datasets contain fewer available records under the same filtering conditions. Applying additional restrictions would significantly reduce the dataset size and could prevent us from reaching the target of 1000 records.
+
+At the same time, this choice involves trade-offs. Titles such as “Untitled” provide limited semantic information, and non-English titles may affect sentiment scoring since the labMT lexicon is English-based.
+
+Therefore, this decision reflects a balance between data coverage and data quality: we prioritize dataset completeness at the collection stage, while leaving open the possibility of further filtering during later analysis.
+
+
+
+## 6. Data Processing
+In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon. 
 
 
 ### Input Data
@@ -690,6 +773,20 @@ The European trend plots reveal similar patterns to the American data, with rela
 ### Citation
 1. Metropolitan Museum of Art. 2020. The Metropolitan Museum of Art Collection API Documentation.
 https://metmuseum.github.io/ 2. Dodds, Peter Sheridan, Kameron Decker Harris, Isabel M. Kloumann, Catherine A. Bliss, and Christopher M. Danforth. 2011.
-“Temporal Patterns of Happiness and Information in a Global-Scale Social Network: Hedonometrics and Twitter.”
+2. “Temporal Patterns of Happiness and Information in a Global-Scale Social Network: Hedonometrics and Twitter.”
 PLoS ONE 6 (12): e26752. https://doi.org/10.1371/journal.pone.0026752
-.
+
+
+### AI Usage Disclosure
+
+We used AI-assisted tools, including ChatGPT, Google Gemini, and the built-in AI chat in Visual Studio Code, to support the development of this project.
+
+These tools were primarily used for:
+- Checking and debugging code
+- Providing suggestions on how to implement specific functions
+- Helping refine and improve existing code structure
+
+All suggestions generated by AI tools were carefully reviewed, tested, and modified by us before being incorporated into the project. We ensured that all code included in this repository was understood and verified by the team.
+
+AI tools were used as supportive aids rather than as a substitute for our own understanding and decision-making.
+
