@@ -624,7 +624,7 @@ Overall, the findings indicate that, while both regions' happiness levels have s
 
 **Overall Distribution**
 
-![Distribution of Happiness Scores](assignment_2/figures/happiness_distribution_overall.png)
+![Distribution of Happiness Scores](assignment_2/figures/happiness_distribution_overall_american.png)
 
 This histogram displays the complete distribution of happiness scores across all 1,797 artworks in our dataset. The distribution is centered between 5.0 and 6.0, reflecting a general tendency toward neutral and positive language in photograph titles.
 
@@ -632,13 +632,13 @@ This histogram displays the complete distribution of happiness scores across all
 
 **Distribution by Period (Density Plot)**
 
-![Happiness Score Distribution by Period](assignment_2/figures/happiness_distribution_by_period.png)
+![Happiness Score Distribution by Period](assignment_2/figures/happiness_distribution_by_period_american.png)
 
 The density plot compares happiness scores between the two time periods (1900–1950 and 1951–2000). The smooth curves make it easier to compare the shapes of the distributions (as opposed to two merged histograms in one chart). Dashed vertical lines indicate the mean happiness score for each period. The slight rightward shift of the 1951–2000 distribution suggests that later photographs tend to have slightly more positive titles. Yet, as mentioned earlier in the comparative analysis you can see that afzter 1951 there is only a slight increase in positive words in the artworks' titles.
 
 **Distribution by Period (Box Plot)**
 
-![Happiness Score Box Plot](assignment_2/figures/happiness_boxplot_by_period.png)
+![Happiness Score Box Plot](assignment_2/figures/happiness_boxplot_by_period_american.png)
 
 In order to visualize whether one period has higher scores and to showcase outliers, we decided to also visualize our results in 2 boxplots. This box plot provides a quartile-based comparison, clearly showing the median (middle line in each box), the spread of the middle 50% of the data (the box itself), and outliers (individual points). This visualization makes it easy to identify whether one period has systematically higher or lower happiness values. Looking closely, it is visible that the 1951 - 2000 period box is higher, but there are also more outliers towards lower happiness scores (which indicates a small contradiction that could be followed up on).
 
@@ -647,17 +647,37 @@ In order to visualize whether one period has higher scores and to showcase outli
 
 **Happiness Trends by Decade (1900–2000)** | **Happiness Trends by Year (1900–2000)**
 ---|---
-![Happiness Trend by Decade](assignment_2/figures/happiness_trend_by_decade.png) | ![Happiness Trend by Year](assignment_2/figures/happiness_trend_by_year.png)
+![Happiness Trend by Decade](assignment_2/figures/happiness_trend_by_decade_american.png) | ![Happiness Trend by Year](assignment_2/figures/happiness_trend_by_year_american.png)
 
 The decade plot reveals the broad historical trajectory, while the year plot captures more detailed volatility and year-specific fluctuations. The year plot then reveals which exact years had notably higher or lower happiness scores, potentially corresponding to specific historical moments, artistic movements, or cultural shifts. The decade plot looks at the long-term trend, while the year plot looks at which specific years were outliers.
 
+### Comparison plots between the two time periods European Artwork Titles
 
-### Comparison plots between the two time periods American Artwork Titles
+**Overall Distribution**
 
+![Distribution of Happiness Scores - European](assignment_2/figures/happiness_distribution_overall_european.png)
 
+This histogram displays the complete distribution of happiness scores across all European artworks in our dataset. Similar to the American dataset, the distribution is centered between 5.0 and 6.0, reflecting a general tendency toward neutral and positive language in photograph titles.
 
+**Distribution by Period (Density Plot)**
 
+![Happiness Score Distribution by Period - European](assignment_2/figures/happiness_distribution_by_period_european.png)
 
+The density plot compares happiness scores between the two time periods (1900–1950 and 1951–2000) for European photograph titles. Like the American data, the curves show minimal differences between the two periods, suggesting relatively stable emotional language across the century.
+
+**Distribution by Period (Box Plot)**
+
+![Happiness Score Box Plot - European](assignment_2/figures/happiness_boxplot_by_period_european.png)
+
+This box plot provides a quartile-based comparison for European photographs. Similar to the American sample, the distributions are fairly comparable across the two periods, with both showing a median around 5.7 and similar spread patterns.
+
+**Trend visualizations for European Artwork Titles**
+
+**Happiness Trends by Decade (1900–2000)** | **Happiness Trends by Year (1900–2000)**
+---|---
+![Happiness Trend by Decade - European](assignment_2/figures/happiness_trend_by_decade_european.png) | ![Happiness Trend by Year - European](assignment_2/figures/happiness_trend_by_year_european.png)
+
+The European trend plots reveal similar patterns to the American data, with relatively stable emotional tones across both decades and individual years. The year-level plot shows the detailed fluctuations in European photograph titles over the 100-year period.
 
 ## 9. Credits
 1. Data acquisition: Yiting Jiao 

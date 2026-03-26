@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_FILE = ROOT / "data" / "processed" / "met_with_scores.csv"
+DATA_FILE = ROOT / "data" / "processed" / "calculated_scores_America.csv"
 FIGURES_DIR = ROOT / "figures"
 FIGURES_DIR.mkdir(exist_ok=True)
 
@@ -27,12 +27,12 @@ ax.set_title("Distribution of Happiness Scores\nMetropolitan Museum American Pho
 ax.grid(axis="y", alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_distribution_overall.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_distribution_overall.png")
+plt.savefig(FIGURES_DIR / "happiness_distribution_overall_american.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_distribution_overall_american.png")
 plt.close()
 
 
-# Visualization: Density plots by period (smooth comparison)
+# Visualization: Density plots by period 
 
 fig, ax = plt.subplots(figsize=(11, 6))
 
@@ -56,8 +56,8 @@ ax.legend(fontsize=11, loc="upper right", framealpha=0.9)
 ax.grid(alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_distribution_by_period.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_distribution_by_period.png")
+plt.savefig(FIGURES_DIR / "happiness_distribution_by_period_american.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_distribution_by_period_american.png")
 plt.close()
 
 
@@ -80,8 +80,8 @@ ax.set_title("Happiness Score Distribution by Period\n(Box plot comparison)", fo
 ax.grid(axis="y", alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_boxplot_by_period.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_boxplot_by_period.png")
+plt.savefig(FIGURES_DIR / "happiness_boxplot_by_period_american.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_boxplot_by_period_american.png")
 plt.close()
 
 plt.close()
@@ -127,8 +127,8 @@ ax.grid(alpha=0.3)
 ax.legend(fontsize=11, loc="best")
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_trend_by_decade.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_trend_by_decade.png")
+plt.savefig(FIGURES_DIR / "happiness_trend_by_decade_american.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_trend_by_decade_american.png")
 plt.close()
 
 
@@ -173,8 +173,8 @@ ax.grid(alpha=0.3)
 ax.legend(fontsize=11, loc="best")
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_trend_by_year.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_trend_by_year.png")
+plt.savefig(FIGURES_DIR / "happiness_trend_by_year_american.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_trend_by_year_american.png")
 plt.close()
 
 print("\nVisualization complete!")

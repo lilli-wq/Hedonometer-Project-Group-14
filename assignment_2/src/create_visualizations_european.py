@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_FILE = ROOT / "data" / "processed" / "met_with_scores.csv"
+DATA_FILE = ROOT / "data" / "processed" / "calculated_scores_Europe.csv"
 FIGURES_DIR = ROOT / "figures"
 FIGURES_DIR.mkdir(exist_ok=True)
 
@@ -22,13 +22,13 @@ fig, ax = plt.subplots(figsize=(10, 6))
 ax.hist(df["happiness_score"], bins=30, color="steelblue", edgecolor="black", alpha=0.7)
 ax.set_xlabel("Happiness Score", fontsize=12, fontweight="bold")
 ax.set_ylabel("Frequency", fontsize=12, fontweight="bold")
-ax.set_title("Distribution of Happiness Scores\nMetropolitan Museum American Photographs (1900-2000)", 
+ax.set_title("Distribution of Happiness Scores\nMetropolitan Museum European Photographs (1900-2000)", 
              fontsize=13, fontweight="bold")
 ax.grid(axis="y", alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_distribution_overall.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_distribution_overall.png")
+plt.savefig(FIGURES_DIR / "happiness_distribution_overall_european.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_distribution_overall_european.png")
 plt.close()
 
 
@@ -51,13 +51,13 @@ ax.axvline(period_1951_2000.mean(), color="skyblue", linestyle="--", linewidth=2
 
 ax.set_xlabel("Happiness Score", fontsize=12, fontweight="bold")
 ax.set_ylabel("Density", fontsize=12, fontweight="bold")
-ax.set_title("Happiness Score Distribution by Period\n(Density plots with means)", fontsize=13, fontweight="bold")
+ax.set_title("Happiness Score Distribution by Period - European Photographs\n(Density plots with means)", fontsize=13, fontweight="bold")
 ax.legend(fontsize=11, loc="upper right", framealpha=0.9)
 ax.grid(alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_distribution_by_period.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_distribution_by_period.png")
+plt.savefig(FIGURES_DIR / "happiness_distribution_by_period_european.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_distribution_by_period_european.png")
 plt.close()
 
 
@@ -76,12 +76,12 @@ for patch, color in zip(bp["boxes"], colors):
     patch.set_alpha(0.7)
 
 ax.set_ylabel("Happiness Score", fontsize=12, fontweight="bold")
-ax.set_title("Happiness Score Distribution by Period\n(Box plot comparison)", fontsize=13, fontweight="bold")
+ax.set_title("Happiness Score Distribution by Period - European Photographs\n(Box plot comparison)", fontsize=13, fontweight="bold")
 ax.grid(axis="y", alpha=0.3)
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_boxplot_by_period.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_boxplot_by_period.png")
+plt.savefig(FIGURES_DIR / "happiness_boxplot_by_period_european.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_boxplot_by_period_european.png")
 plt.close()
 
 plt.close()
@@ -121,14 +121,14 @@ if len(decade_stats) > 1:
 
 ax.set_xlabel("Decade", fontsize=12, fontweight="bold")
 ax.set_ylabel("Mean Happiness Score", fontsize=12, fontweight="bold")
-ax.set_title("Emotional Language Trends in Met Photograph Titles by Decade (1900–2000)", 
+ax.set_title("Emotional Language Trends in Met European Photograph Titles by Decade (1900–2000)", 
              fontsize=13, fontweight="bold")
 ax.grid(alpha=0.3)
 ax.legend(fontsize=11, loc="best")
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_trend_by_decade.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_trend_by_decade.png")
+plt.savefig(FIGURES_DIR / "happiness_trend_by_decade_european.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_trend_by_decade_european.png")
 plt.close()
 
 
@@ -167,15 +167,14 @@ if len(year_stats) > 1:
 
 ax.set_xlabel("Year", fontsize=12, fontweight="bold")
 ax.set_ylabel("Mean Happiness Score", fontsize=12, fontweight="bold")
-ax.set_title("Emotional Language Trends in Met Photograph Titles (1900–2000)", 
+ax.set_title("Emotional Language Trends in Met European Photograph Titles (1900–2000)", 
              fontsize=13, fontweight="bold")
 ax.grid(alpha=0.3)
 ax.legend(fontsize=11, loc="best")
 
 plt.tight_layout()
-plt.savefig(FIGURES_DIR / "happiness_trend_by_year.png", dpi=300, bbox_inches="tight")
-print(f"Saved: happiness_trend_by_year.png")
+plt.savefig(FIGURES_DIR / "happiness_trend_by_year_european.png", dpi=300, bbox_inches="tight")
+print(f"Saved: happiness_trend_by_year_european.png")
 plt.close()
 
 print("\nVisualization complete!")
-
