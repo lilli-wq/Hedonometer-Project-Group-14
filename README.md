@@ -705,7 +705,7 @@ Overall, the findings indicate that, while both regions' happiness levels have s
 
 ### Histograms showing the distribution of happiness scores
 
-**Overall Distribution**
+**Overall Distribution - American**
 
 ![Distribution of Happiness Scores](assignment_2/figures/happiness_distribution_overall_american.png)
 
@@ -713,20 +713,20 @@ This histogram displays the complete distribution of happiness scores across all
 
 ### Comparison plots between the two time periods American Artwork Titles
 
-**Distribution by Period (Density Plot)**
+**Distribution by Period (Density Plot) - American**
 
 ![Happiness Score Distribution by Period](assignment_2/figures/happiness_distribution_by_period_american.png)
 
 The density plot compares happiness scores between the two time periods (1900–1950 and 1951–2000). The smooth curves make it easier to compare the shapes of the distributions (as opposed to two merged histograms in one chart). Dashed vertical lines indicate the mean happiness score for each period. The slight rightward shift of the 1951–2000 distribution suggests that later photographs tend to have slightly more positive titles. Yet, as mentioned earlier in the comparative analysis you can see that afzter 1951 there is only a slight increase in positive words in the artworks' titles.
 
-**Distribution by Period (Box Plot)**
+**Distribution by Period (Box Plot) - American**
 
 ![Happiness Score Box Plot](assignment_2/figures/happiness_boxplot_by_period_american.png)
 
 In order to visualize whether one period has higher scores and to showcase outliers, we decided to also visualize our results in 2 boxplots. This box plot provides a quartile-based comparison, clearly showing the median (middle line in each box), the spread of the middle 50% of the data (the box itself), and outliers (individual points). This visualization makes it easy to identify whether one period has systematically higher or lower happiness values. Looking closely, it is visible that the 1951 - 2000 period box is higher, but there are also more outliers towards lower happiness scores (which indicates a small contradiction that could be followed up on).
 
 
-# Trend visualizations illustrating potential changes in emotional language over time
+# Trend visualizations illustrating potential changes in emotional language over time - American
 
 **Happiness Trends by Decade (1900–2000)** | **Happiness Trends by Year (1900–2000)**
 ---|---
@@ -736,27 +736,27 @@ The decade plot reveals the broad historical trajectory, while the year plot cap
 
 ### Comparison plots between the two time periods European Artwork Titles
 
-**Overall Distribution**
+**Overall Distribution - European**
 
 ![Distribution of Happiness Scores - European](assignment_2/figures/happiness_distribution_overall_european.png)
 
 This histogram displays the complete distribution of happiness scores across all European artworks in our dataset. Similar to the American dataset, the distribution is centered between 5.0 and 6.0, reflecting a general tendency toward neutral and positive language in photograph titles.
 
-**Distribution by Period (Density Plot)**
+**Distribution by Period (Density Plot) - European**
 
 ![Happiness Score Distribution by Period - European](assignment_2/figures/happiness_distribution_by_period_european.png)
 
 The density plot compares happiness scores between the two time periods (1900–1950 and 1951–2000) for European photograph titles. Like the American data, the curves show minimal differences between the two periods, suggesting relatively stable emotional language across the century.
 
-**Distribution by Period (Box Plot)**
+**Distribution by Period (Box Plot) - European**
 
 ![Happiness Score Box Plot - European](assignment_2/figures/happiness_boxplot_by_period_european.png)
 
 This box plot provides a quartile-based comparison for European photographs. Similar to the American sample, the distributions are fairly comparable across the two periods, with both showing a median around 5.7 and similar spread patterns.
 
-**Trend visualizations for European Artwork Titles**
+**Trend visualizations for European Artwork Titles (1900–2000)**
 
-**Happiness Trends by Decade (1900–2000)** | **Happiness Trends by Year (1900–2000)**
+**Happiness Trends by Decade** | **Happiness Trends by Year**
 ---|---
 ![Happiness Trend by Decade - European](assignment_2/figures/happiness_trend_by_decade_european.png) | ![Happiness Trend by Year - European](assignment_2/figures/happiness_trend_by_year_european.png)
 
