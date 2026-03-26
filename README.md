@@ -528,6 +528,72 @@ To estimate the uncertainty of this difference, a bootstrap method with 2000 res
 Overall, the analysis suggests that photograph titles from 1951–2000 tend to be slightly more positive or expressive than those from 1900–1950, although the overall difference remains relatively small.
 
 
+
+
+
+## Statistical Analysis: America–Europe Comparison
+
+Following a statistical examination of temporal differences within a single dataset, the analysis was expanded to include patterns from two regions, which are America and Europe. This additional step allows us to compare the observed changes in happiness levels in the titles over time in the two cultural contexts.
+
+### Summary statistics by region and period
+
+After integrating the American and European datasets and deleting rows with missing happiness scores, summary statistics were calculated for each location and time period.
+
+The American dataset included 904 titles from 1900 to 1950, as well as 893 titles from 1951 to 2000. The European dataset included 831 titles for 1900-1950 and 798 titles for 1951-2000.
+
+In America, the average happiness score grew from 5.6996 in 1900-1950 to 5.7574 in 1951-2000.  
+The mean happiness score in Europe grew from 5.5018 to 5.5131 for the same time period.
+
+These findings show that both regions experience slightly increase in happiness scores over time, while the size of the shift is smaller in the European dataset.
+
+The results can be found in:  
+`assignment_2/outputs/summary_stats_america_europe.csv`
+
+---
+
+### Comparative analysis in each region
+
+To evaluate changes over time within both of them, the difference in mean happiness scores between the two periods was determined.
+
+In America, the difference (1951-2000 minus 1900-1950) was about 0.0578.  
+For Europe, the difference was about 0.0119.
+
+For the purpose of sampling variability, a bootstrap approach of 2000 resamples was used. This built confidence intervals for each comparison.
+
+The bootstrap results indicate that the increase in happiness scores is more pronounced in the American sample than in the European dataset, even though both improvements are minor in scale.
+
+The results can be found in:  
+`assignment_2/outputs/bootstrap_comparisons_america_europe.csv`
+
+---
+
+### Difference-in-difference analysis
+
+To more formally compare changes across regions, a difference-in-differences (DID) approach was employed. This method determines whether the change over time in one group differs from the change observed in the other group.
+
+The DID estimate was calculated as follows:
+
+(European Time Change) - (American Time Change)
+
+This gave an estimated value of -0.0459, showing that the growth in happiness scores over time is lower in Europe than in America.
+
+To evaluate uncertainty, a bootstrap confidence interval was calculated. The 95% confidence interval is around -0.123 to 0.032.
+
+The results are available in:  
+`assignment_2/outputs/difference_in_differences_america_europe.csv`
+
+---
+
+### Interpretation
+
+The negative difference-in-differences estimate indicates that the increase in happiness scores is slightly smaller in the European dataset than in the American dataset.
+
+However, the confidence interval contains 0, implying that the difference is not statistically significant. In other words, the observed variation between the two regions could be interpreted as sampling variability rather than a clear underlying difference.
+
+Overall, the findings indicate that, while both regions' happiness levels have slightly increased over time, the evidence for a significant difference between America and Europe remains modest.
+
+
+
 ## 8. Visualization
 
 ### Histograms showing the distribution of happiness scores
