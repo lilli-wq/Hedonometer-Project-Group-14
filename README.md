@@ -496,15 +496,13 @@ To measure emotional content in artwork titles, we use the Hedonometer method ba
 The process consists of three steps:
 
 ### Tokenization
-Titles are converted to lowercase and split into individual words. To improve matching accuracy, we implemented a punctuation stripping process that removes characters such as "()" from each word. This ensures that a word can be matched with the same form in the dictionary.
+Titles were standardized to lowercase and split into individual tokens. To improve matching accuracy, we implemented a punctuation stripping process that removes non-alphanumberic characters such as "()" from each word. This ensures that each word is normalized with the same form in the dictionary.
 
-### Dictionary Matching
-During the initial loading phase, we skipped the descriptive metadata headers in the raw labMT file to ensure data alignment. Each word is matched with the labMT happiness dictionary, which assigns happiness scores on a scale from 1 (least happy) to 9 (most happy). Furthermore, any words not found or matched in the dictionary are excluded from the calculation, which prevents the final scores from being effected by unrecognized terms.
-
+### Dictionary Matching 
+During the initial data loading phase, we skipped the descriptive metadata headers in the raw labMT file to ensure data alignment. Each token is matched with the labMT happiness dictionary, which assigns happiness scores on a scale from 1 (least happy) to 9 (most happy). Words not found or matched in the dictionary were excluded from the calculation to prevent the unrecognized terms affecting the final calculation.
 ### Score Calculation
 The happiness score of a title is computed as the average happiness score of its matched words.
-Our first step is to analyze the data from America. This process successfully scored 1797 out of 1997 artwork titles, achiving a coverage rate of approximately 90%. Titles with no matching words are assigned with a NAN value. Then the same steps with the European data were performed, 1629 out of 1999 titles paired with the dictionary successfully. By excluding invalid data points, this ensures the objectivity and consistency of the subsequent statistical analysis.
-This produces a numerical sentiment value for each artwork title, enabling a comparative analysis of emotional trends over the 20th century being processed.
+Our first step is to analyze the data from America. This process successfully scored 1797 out of 1997 artwork titles, achiving a coverage rate of approximately 90%. Titles with no matching words are assigned with a NAN value. The same steps then were applied to the European dataset, where 1629 out of 1999 titles paired with the dictionary successfully. By excluding invalid data points, we ensured the objectivity and consistency of the subsequent statistical analysis. These finalized numerical sentiment value for each artwork title provided the foundation for a comparative analysis of emotional trends across the 20th century between the two continents.
 
 
 ## 7. Statistical Analysis
