@@ -425,56 +425,65 @@ In this step, the raw datasets obtained from the Metropolitan Museum of Art Coll
 
 ### Input Data
 
-The raw data were collected in Part 1 and stored as two JSON files representing different time periods of photographic artworks:
-	•	met_photographs_american_1900_1950_raw.json
-	•	met_photographs_american_1951_2000_raw.json
+The raw data were consist of four JSON files representing different groups and time periods:
+	•	American photographs (1900–1950)
+	•	American photographs (1951–2000)
+	•	European photographs (1900–1950)
+	•	European photographs (1951–2000)
 
-Each file contains metadata for artworks from the Photographs department where the artist nationality is American.
-
+Each dataset contains metadata for photographic artworks, including title, artist information, and date.
 ### Processing Steps
 
 The following preprocessing steps were applied:
-1. Load raw datasets
-   The two JSON files were loaded into pandas dataframes.
-
-2. Merge datasets
-  The two time-period datasets were merged into a single dataframe.
-  A new variable period was added to indicate the corresponding time range (1900–1950 or 1951–2000).
-      
-3. Select relevant metadata
- Key metadata fields were retained for analysis, including:
-
-	    •	objectID
-	    •	title
-	    •	artistDisplayName
-	    •	artistNationality
-	    •	objectDate
-	    •	objectBeginDate
-	    •	objectEndDate
-	    •	classification
-	    •	medium
-	    •	repository
-	    •	objectURL
-	    •	period
-
-4. Remove missing titles
+The following preprocessing steps were applied:
+	1.	Load raw datasets
+All JSON files were loaded into pandas dataframes.
+	2.	Merge datasets
+Datasets were merged into unified dataframes for each group (American and European).
+A new variable period was added to distinguish between the two time ranges.
+	3.	Add group identifier
+A variable group was introduced to distinguish between American and European datasets.
+	4.	Select relevant metadata
+Key fields were retained for analysis, including:
+	•	objectID
+	•	title
+	•	artistDisplayName
+	•	artistNationality
+	•	objectDate
+	•	objectBeginDate
+	•	objectEndDate
+	•	classification
+	•	medium
+	•	repository
+	•	objectURL
+	•	period
+	•	group
+5. Remove missing titles
 Records with missing or empty titles were removed, since titles are the textual input used for sentiment analysis.
 
-5. Text normalization
+6. Text normalization
 Artwork titles were normalized by:
 	•	converting all text to lowercase
 	•	removing punctuation and numbers
 	•	collapsing multiple spaces
 The cleaned titles were stored in a new column called clean_title.
 
-6. To avoid overrepresentation of highly prolific artists within the Met collection, we restricted the dataset to one observation per artist. This reduces bias introduced by unequal numbers of works per artist and better aligns with the assumption of independent observations. While this approach limits the ability to capture variation within an individual artist’s work, it allows for a more balanced comparison across time periods and regions.
+7.	Feature creation
+An additional variable title_length was created to represent the number of words in each title, which can be useful for further analysis.
+
+8. To avoid overrepresentation of highly prolific artists within the Met collection, we restricted the dataset to one observation per artist. This reduces bias introduced by unequal numbers of works per artist and better aligns with the assumption of independent observations. While this approach limits the ability to capture variation within an individual artist’s work, it allows for a more balanced comparison across time periods and regions.
 
 
 ### Output Data
 
 The processed dataset was saved as:
 assignment_2/data/cache/processed_photographs_titles.csv
-The final processed dataset contains 1997 records.
+assignment_2/data/cache/processed_titles_european.csv
+
+	•	American dataset: 1997 records after cleaning
+	•	European dataset: 1999 records after cleaning
+
+Each row represents one artwork and includes both the original title and the cleaned version (clean_title).
 
 ## 6. Happiness Score Calculation
 
