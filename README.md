@@ -413,7 +413,7 @@ src/fetch_met_photographs_data_1951_2000.py
 
 ### Dataset Size
 1900–1950 : 1000 artworks
-1951–2000 : 860 artworks
+1951–2000 : 1000 artworks
 
 The fetch scripts retrieve object IDs from the Photographs department and then request detailed metadata for each object individually. To ensure stable data collection, the scripts implement request throttling (a delay between requests), retry logic for temporary API errors, and deduplication based on unique title–artist pairs.
 
@@ -421,6 +421,19 @@ Although the target size was 1000 records for both periods, the second dataset c
 
 ## 5. Data Processing
 In this step, the raw datasets obtained from the Metropolitan Museum of Art Collection API were processed and cleaned to prepare them for sentiment analysis. The goal of this step is to transform the raw metadata into a structured dataset suitable for text analysis using the labMT happiness lexicon. 
+
+## Research Design Update
+
+In the initial stage of the project, we focused on collecting two American photograph datasets based on different time periods (1900–1950 and 1951–2000). However, after a preliminary inspection, we found that the differences in sentiment reflected in the titles between the two time periods were not particularly pronounced.
+
+To address this limitation, we refined our approach by introducing a cross-regional comparison. Specifically, we collected an additional set of European photograph datasets under the same filtering criteria and time ranges.
+
+This adjustment allows us to:
+
+- Compare sentiment differences across regions (American vs European)
+- Examine whether regional context produces more distinguishable patterns than temporal changes alone
+
+By combining both temporal and regional dimensions, our dataset might support a more robust comparative analysis. This iterative approach also reflects a data-driven refinement of our research design.
 
 
 ### Input Data
