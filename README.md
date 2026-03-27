@@ -536,14 +536,17 @@ Each dataset contains metadata for photographic artworks, including title, artis
 ### Processing Steps
 
 The following preprocessing steps were applied:
-1. Load raw datasets
+1. Load raw datasets：
 All JSON files were loaded into pandas dataframes.
-2. Merge datasets
+
+2. Merge datasets：
 Datasets were merged into unified dataframes for each group (American and European).
 A new variable period was added to distinguish between the two time ranges.
-3. Add group identifier
+
+3. Add group identifier：
 A variable group was introduced to distinguish between American and European datasets.
-4. Select relevant metadata
+
+4. Select relevant metadata：
 Key fields were retained for analysis, including:
 - objectID
 - title
@@ -558,17 +561,17 @@ Key fields were retained for analysis, including:
 - objectURL
 - period
 - group
-5. Remove missing titles
+5. Remove missing titles：
 Records with missing or empty titles were removed, since titles are the textual input used for sentiment analysis.
 
-6. Text normalization
+6. Text normalization：
 Artwork titles were normalized by:
 	•	converting all text to lowercase
 	•	removing punctuation and numbers
 	•	collapsing multiple spaces
 The cleaned titles were stored in a new column called clean_title.
 
-7.	Feature creation
+7.	Feature creation：
 An additional variable title_length was created to represent the number of words in each title, which can be useful for further analysis.
 
 8. To avoid overrepresentation of highly prolific artists within the Met collection, we restricted the dataset to one observation per artist. This reduces bias introduced by unequal numbers of works per artist and better aligns with the assumption of independent observations. While this approach limits the ability to capture variation within an individual artist’s work, it allows for a more balanced comparison across time periods and regions.
